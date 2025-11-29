@@ -18,9 +18,17 @@
    * Limitations: single scalar state, simplified dynamics, not predictive.
    */
 
-  import { onMount, onDestroy } from 'svelte';
-  import { init as initViz, destroy as destroyViz } from '../visualizations/viz-stability-vs-drift';
-  import { defaultParams, initState, update, type Params } from '../models/model-stability-vs-drift';
+  import { onMount, onDestroy } from "svelte";
+  import {
+    init as initViz,
+    destroy as destroyViz,
+  } from "../visualizations/viz-stability-vs-drift";
+  import {
+    defaultParams,
+    initState,
+    update,
+    type Params,
+  } from "../models/model-stability-vs-drift";
 
   let container: HTMLDivElement | null = null;
 
@@ -30,7 +38,10 @@
   let history: number[] = [];
   let state = initState(0);
 
-  let viz: { render: (h: number[]) => void; resize: (w: number, h: number) => void } | null = null;
+  let viz: {
+    render: (h: number[]) => void;
+    resize: (w: number, h: number) => void;
+  } | null = null;
 
   let running = true;
   let stepInterval = 100; // ms between steps (10 steps/sec)
@@ -74,11 +85,44 @@
 <div class="toy">
   <header>
     <h3>Stability vs Drift</h3>
+    <section class="toy-description">
+      <p>
+        A scalar linear recurrence with additive Gaussian noise. The recurrence
+        x[t+1] = a * x[t] + b + N(0, σ) shows how damping (a), drift (b), and
+        noise (σ) affect stability and variability over time.
+      </p>
+    </section>
     <div class="controls">
-      <label>a (damping) <input type="range" min="0" max="1" step="0.01" bind:value={params.a} /></label>
-      <label>b (drift) <input type="range" min="-1" max="1" step="0.01" bind:value={params.b} /></label>
-      <label>σ (noise) <input type="range" min="0" max="1" step="0.01" bind:value={params.sigma} /></label>
-      <button on:click={toggleRunning}>{running ? 'Pause' : 'Run'}</button>
+      <label>
+        a (damping)
+        <input type="range" min="0" max="1" step="0.01" bind:value={params.a} />
+        <span class="val">{params.a.toFixed(2)}</span>
+      </label>
+
+      <label>
+        b (drift)
+        <input
+          type="range"
+          min="-1"
+          max="1"
+          step="0.01"
+          bind:value={params.b}
+        />
+        <span class="val">{params.b.toFixed(2)}</span>
+      </label>
+
+      <label>
+        σ (noise)
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          bind:value={params.sigma}
+        />
+        <span class="val">{params.sigma.toFixed(2)}</span>
+      </label>
+      <button on:click={toggleRunning}>{running ? "Pause" : "Run"}</button>
       <button on:click={reset}>Reset</button>
     </div>
   </header>
@@ -87,6 +131,13 @@
 </div>
 
 <style>
-  .controls { display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap }
-  label { font-size:0.85rem }
+  .controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  label {
+    font-size: 0.85rem;
+  }
 </style>
