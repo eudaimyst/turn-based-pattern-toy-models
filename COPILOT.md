@@ -140,18 +140,15 @@ When assisting in this repository, Copilot must:
 │   ├── components/
 │   │   ├── Gallery.svelte   <-- manually created home page listing all toys
 │   │   ├── Toy1.svelte
-│   │   ├── Toy2.svelte
 │   │   ├── Toy3.svelte
 │   │   └── ... additional toy components
 │   │
 │   ├── models/              <-- pure mathematical model logic
 │   │   ├── model-toy1.ts
-│   │   ├── model-toy2.ts
 │   │   └── ...
 │   │
 │   ├── visualizations/      <-- D3 visualization modules
 │   │   ├── viz-toy1.ts
-│   │   ├── viz-toy2.ts
 │   │   └── ...
 │   │
 │   └── lib/                 <-- shared utilities, types, helpers

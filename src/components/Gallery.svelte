@@ -6,8 +6,8 @@
   // Manually-defined toy list (no auto-discovery).
   // Each entry: id, name, placeholder color
   export const toys = [
-  { id: "toy1", name: "Stability vs Drift", color: "#cbd5e0" },
-  { id: "toy2", name: "Threshold Response", color: "#e6fffa" },
+    { id: "toy1", name: "Stability vs Drift", color: "#cbd5e0" },
+    // Toy2 removed from scope
     { id: "context-saturation", name: "Context Saturation", color: "#fef3c7" },
     { id: "coupling-strength", name: "Coupling Strength", color: "#ede9fe" },
     { id: "noise-sensitivity", name: "Noise Sensitivity", color: "#fff1f2" },
