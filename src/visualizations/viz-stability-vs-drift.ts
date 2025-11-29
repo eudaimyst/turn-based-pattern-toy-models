@@ -73,11 +73,8 @@ function render(history: number[]) {
   if (!viz.svg || !viz.line || !viz.path || !viz.xScale || !viz.yScale) return;
 
   viz.xScale.domain([0, Math.max(1, history.length - 1)]);
-  const yMin = d3.min(history) ?? -1;
-  const yMax = d3.max(history) ?? 1;
-  // add small padding
-  const pad = Math.max(0.1, (yMax - yMin) * 0.1);
-  viz.yScale.domain([yMin - pad, yMax + pad]);
+  // Keep y-axis domain fixed for this toy to avoid auto-zooming on transient wiggles.
+  // The initial domain is set in init() (default: [-1, 1]).
 
   const d = viz.line(history as any);
   viz.path?.attr('d', d ?? '');

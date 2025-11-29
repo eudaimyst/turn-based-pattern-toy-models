@@ -3,7 +3,7 @@
 // Exports: Params, State, defaultParams, initState, update
 
 export type Params = {
-  a: number; // damping coefficient (0..1)
+  a: number; // stability coefficient (0..1)
   b: number; // constant drift term
   sigma: number; // noise magnitude (stddev)
 };
@@ -33,6 +33,6 @@ export function randn(): number {
 
 export function update(state: State, params: Params): State {
   const noise = params.sigma * randn();
-  const xNext = params.a * state.x + params.b + noise;
+  const xNext = (1 - params.a) * state.x + params.b + noise;
   return { x: xNext };
 }

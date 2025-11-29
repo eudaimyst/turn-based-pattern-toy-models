@@ -4,16 +4,16 @@
    * Purpose: Illustrate damping vs drift under additive noise.
    *
    * Mathematical model:
-   *   x[t+1] = a * x[t] + b + N(0, σ)
+   *   x[t+1] = (1 - a) * x[t] + b + N(0, σ)
    *
    * Parameters:
    * | Parameter | Meaning | Range | Default |
    * |---|---:|---:|---:|
-   * | a | damping coefficient | 0–1 | 0.8 |
-   * | b | constant drift term | -1–1 | 0.0 |
-   * | σ | noise stddev | 0–1 | 0.05 |
+   * | a | stability coefficient | 0.1–1 | 0.8 |
+   * | b | constant drift term | -0.05–0.05 | 0.0 |
+   * | σ | noise stddev | 0.02–0.1 | 0.05 |
    *
-   * What this shows: damping, drift, noise-driven variability in a scalar recurrence.
+   * What this shows: stability, drift, noise-driven variability in a scalar recurrence.
    * What this does not imply: cognition, memory, intentions, neural-network internals.
    * Limitations: single scalar state, simplified dynamics, not predictive.
    */
@@ -87,15 +87,52 @@
     <h3>Stability vs Drift</h3>
     <section class="toy-description">
       <p>
-        A scalar linear recurrence with additive Gaussian noise. The recurrence
-        x[t+1] = a * x[t] + b + N(0, σ) shows how damping (a), drift (b), and
-        noise (σ) affect stability and variability over time.
+        This toy uses the update rule <code
+          >x[t+1] = a · x[t] + b + N(0, σ)</code
+        > to illustrate how stability, drift, and noise influence the evolution of
+        a scalar signal over time.
+      </p>
+
+      <p>
+        <strong>Stability (a):</strong>
+        The parameter <code>a</code> determines how strongly the recurrence pulls
+        the signal toward baseline from one step to the next. Higher values cause
+        deviations to decrease rapidly, while lower values allow deviations to persist
+        or grow.
+      </p>
+
+      <p>
+        <strong>Drift (b):</strong>
+        The parameter <code>b</code> is a constant additive term that introduces
+        a uniform directional bias. Positive values increase the signal over time,
+        and negative values decrease it. This represents only a linear bias in the
+        recurrence without psychological or interpretive meaning.
+      </p>
+
+      <p>
+        <strong>Noise (σ):</strong>
+        The parameter <code>σ</code> sets the magnitude of Gaussian noise added per
+        update step. Larger values create higher variability in the trajectory, while
+        smaller values keep the path smoother. Noise is used strictly as a mathematical
+        perturbation term.
+      </p>
+
+      <p>
+        This toy illustrates how stability, drift, and variability emerge in a
+        simple linear recurrence. It does not represent AI cognition, internal
+        mechanisms, psychological states, or behavior.
       </p>
     </section>
     <div class="controls">
       <label>
-        a (damping)
-        <input type="range" min="0" max="1" step="0.01" bind:value={params.a} />
+        a (stability)
+        <input
+          type="range"
+          min=".1"
+          max="1"
+          step="0.01"
+          bind:value={params.a}
+        />
         <span class="val">{params.a.toFixed(2)}</span>
       </label>
 
@@ -103,9 +140,9 @@
         b (drift)
         <input
           type="range"
-          min="-1"
-          max="1"
-          step="0.01"
+          min="-0.05"
+          max="0.05"
+          step="0.001"
           bind:value={params.b}
         />
         <span class="val">{params.b.toFixed(2)}</span>
@@ -115,9 +152,9 @@
         σ (noise)
         <input
           type="range"
-          min="0"
-          max="1"
-          step="0.01"
+          min="0.02"
+          max="0.1"
+          step="0.001"
           bind:value={params.sigma}
         />
         <span class="val">{params.sigma.toFixed(2)}</span>
