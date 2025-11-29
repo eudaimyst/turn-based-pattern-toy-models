@@ -88,7 +88,7 @@
     <section class="toy-description">
       <p>
         This toy uses the update rule <code
-          >x[t+1] = a · x[t] + b + N(0, σ)</code
+          >x[t+1] = (1 - a) · x[t] + b + N(0, σ)</code
         > to illustrate how stability, drift, and noise influence the evolution of
         a scalar signal over time.
       </p>

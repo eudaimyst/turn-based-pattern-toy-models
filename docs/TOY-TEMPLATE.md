@@ -104,6 +104,7 @@ Example structural outline:
   <!-- sliders showing current values -->
 </div>
 <div bind:this={container} class="visualization"></div>
+These components are not auto-routed. They must be referenced manually from the main application or from a navigation component, as the project uses Svelte + Vite and not SvelteKit.
 
 ## 12. References (Optional)
 Cite only mathematical or dynamical-systems sources. Do not reference machine learning, psychology, or neuroscience.

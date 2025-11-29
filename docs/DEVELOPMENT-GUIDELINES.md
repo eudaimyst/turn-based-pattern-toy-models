@@ -5,6 +5,13 @@
 - **D3.js** for charts, vector fields, potential surfaces, and interactive visuals
 - **TypeScript** recommended for type clarity
 
+### Routing and Framework Constraints
+
+- The project uses Svelte + Vite, not SvelteKit.
+- Do not use SvelteKit filesystem routing conventions (+page.svelte, +layout.svelte).
+- Navigation between pages or views must be implemented using standard Svelte components and manual routing logic where needed.
+- All components are rendered via the Vite entry point (main.ts) and must be explicitly imported.
+
 ## Architectural Principles
 
 ### 1. Separation of Concerns

@@ -29,3 +29,42 @@ For all automated code assistance, see:
 
 This repository is intended for conceptual exploration and educational visualization.  
 It is not a scientific modeling tool.
+
+## Repository Structure
+/
+├── docs/
+│   ├── overview.md
+│   ├── development-guidelines.md
+│   ├── toy-template.md
+│   ├── toy-specs.txt        <-- human-authored specifications for each toy
+│   └── additional documentation files
+│
+├── src/
+│   ├── main.ts              <-- Vite entry point
+│   ├── App.svelte           <-- root component, loads Gallery or selected Toy
+│   │
+│   ├── components/
+│   │   ├── Gallery.svelte   <-- manually created home page listing all toys
+│   │   ├── Toy1.svelte
+│   │   ├── Toy2.svelte
+│   │   ├── Toy3.svelte
+│   │   └── ... additional toy components
+│   │
+│   ├── models/              <-- pure mathematical model logic
+│   │   ├── model-toy1.ts
+│   │   ├── model-toy2.ts
+│   │   └── ...
+│   │
+│   ├── visualizations/      <-- D3 visualization modules
+│   │   ├── viz-toy1.ts
+│   │   ├── viz-toy2.ts
+│   │   └── ...
+│   │
+│   └── lib/                 <-- shared utilities, types, helpers
+│
+├── public/                  <-- static assets
+│
+├── index.html               <-- root HTML for Vite
+├── package.json
+├── vite.config.js
+└── svelte.config.js

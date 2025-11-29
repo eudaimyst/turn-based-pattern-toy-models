@@ -112,14 +112,43 @@ Not intended for:
 - social modeling  
 
 ## Repository Structure
-haii-dynamics/
-  README.md
-  docs/
-    overview.md
-    development-guidelines.md
-    toy-template.md
-  src/
-  lib/
-  components/
-  models/
-  visualizations/
+/
+├── docs/
+│   ├── overview.md
+│   ├── development-guidelines.md
+│   ├── toy-template.md
+│   ├── toy-specs.txt        <-- human-authored specifications for each toy
+│   └── additional documentation files
+│
+├── src/
+│   ├── main.ts              <-- Vite entry point
+│   ├── App.svelte           <-- root component, loads Gallery or selected Toy
+│   │
+│   ├── components/
+│   │   ├── Gallery.svelte   <-- manually created home page listing all toys
+│   │   ├── Toy1.svelte
+│   │   ├── Toy2.svelte
+│   │   ├── Toy3.svelte
+│   │   └── ... additional toy components
+│   │
+│   ├── models/              <-- pure mathematical model logic
+│   │   ├── model-toy1.ts
+│   │   ├── model-toy2.ts
+│   │   └── ...
+│   │
+│   ├── visualizations/      <-- D3 visualization modules
+│   │   ├── viz-toy1.ts
+│   │   ├── viz-toy2.ts
+│   │   └── ...
+│   │
+│   └── lib/                 <-- shared utilities, types, helpers
+│
+├── public/                  <-- static assets
+│
+├── index.html               <-- root HTML for Vite
+├── package.json
+├── vite.config.js
+└── svelte.config.js
+
+The project uses Svelte with Vite as the build system. It does not use SvelteKit.
+Routing and navigation must be implemented manually using standard Svelte component composition.

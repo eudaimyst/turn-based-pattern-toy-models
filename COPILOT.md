@@ -17,6 +17,10 @@ This repository contains a Svelte + TypeScript + D3.js project for visualizing s
 - **D3.js** for all visualizations.
 - **Vite** build setup (already configured).
 
+The project does not use SvelteKit. All navigation must rely on standard Svelte component composition.
+Do not generate SvelteKit routing files or conventions such as +page.svelte or +layout.svelte.
+Navigation between toys should be implemented using a neutral gallery component or a manually defined router written in Svelte.
+
 No additional frameworks or visualization libraries may be introduced without explicit instructions.
 
 ---
@@ -119,3 +123,42 @@ When assisting in this repository, Copilot must:
 - maintain the established architecture
 - ask clarifying questions when needed
 - remain consistent with all documentation in the /docs directory
+
+## Repository Structure
+/
+├── docs/
+│   ├── overview.md
+│   ├── development-guidelines.md
+│   ├── toy-template.md
+│   ├── toy-specs.txt        <-- human-authored specifications for each toy
+│   └── additional documentation files
+│
+├── src/
+│   ├── main.ts              <-- Vite entry point
+│   ├── App.svelte           <-- root component, loads Gallery or selected Toy
+│   │
+│   ├── components/
+│   │   ├── Gallery.svelte   <-- manually created home page listing all toys
+│   │   ├── Toy1.svelte
+│   │   ├── Toy2.svelte
+│   │   ├── Toy3.svelte
+│   │   └── ... additional toy components
+│   │
+│   ├── models/              <-- pure mathematical model logic
+│   │   ├── model-toy1.ts
+│   │   ├── model-toy2.ts
+│   │   └── ...
+│   │
+│   ├── visualizations/      <-- D3 visualization modules
+│   │   ├── viz-toy1.ts
+│   │   ├── viz-toy2.ts
+│   │   └── ...
+│   │
+│   └── lib/                 <-- shared utilities, types, helpers
+│
+├── public/                  <-- static assets
+│
+├── index.html               <-- root HTML for Vite
+├── package.json
+├── vite.config.js
+└── svelte.config.js

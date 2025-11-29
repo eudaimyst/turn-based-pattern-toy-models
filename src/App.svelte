@@ -5,6 +5,18 @@
    * Includes the Stability vs Drift toy.
    */
   import ToyStabilityVsDrift from "./components/ToyStabilityVsDrift.svelte";
+  import Gallery from "./components/Gallery.svelte";
+
+  // selectedToy: null shows gallery; otherwise render the chosen toy
+  let selectedToy: string | null = null;
+
+  function handleSelect(event: CustomEvent<string>) {
+    selectedToy = event.detail as string;
+  }
+
+  function backToGallery() {
+    selectedToy = null;
+  }
 </script>
 
 <main>
@@ -16,7 +28,24 @@
   </header>
 
   <section>
-    <ToyStabilityVsDrift />
+    {#if !selectedToy}
+      <Gallery on:selectToy={handleSelect} />
+    {:else}
+      {#if selectedToy === 'stability-vs-drift'}
+        <div class="toy-header">
+          <button on:click={backToGallery} class="back">Back</button>
+        </div>
+        <ToyStabilityVsDrift />
+      {:else}
+        <div class="toy-header">
+          <button on:click={backToGallery} class="back">Back</button>
+        </div>
+        <div class="not-impl">
+          <h3>Not implemented</h3>
+          <p>This toy is a placeholder in the gallery and has not been implemented yet.</p>
+        </div>
+      {/if}
+    {/if}
   </section>
 </main>
 
