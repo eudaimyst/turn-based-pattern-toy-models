@@ -4,7 +4,7 @@
    * Minimal application shell that mounts toy components.
    * Includes the Stability vs Drift toy.
    */
-  import ToyStabilityVsDrift from "./components/ToyStabilityVsDrift.svelte";
+  import Toy1 from "./components/Toy1.svelte";
   import Gallery from "./components/Gallery.svelte";
 
   // selectedToy: null shows gallery; otherwise render the chosen toy
@@ -30,21 +30,22 @@
   <section>
     {#if !selectedToy}
       <Gallery on:selectToy={handleSelect} />
+    {:else if selectedToy === "toy1"}
+      <div class="toy-header">
+        <button on:click={backToGallery} class="back">Back</button>
+      </div>
+      <Toy1 />
     {:else}
-      {#if selectedToy === 'stability-vs-drift'}
-        <div class="toy-header">
-          <button on:click={backToGallery} class="back">Back</button>
-        </div>
-        <ToyStabilityVsDrift />
-      {:else}
-        <div class="toy-header">
-          <button on:click={backToGallery} class="back">Back</button>
-        </div>
-        <div class="not-impl">
-          <h3>Not implemented</h3>
-          <p>This toy is a placeholder in the gallery and has not been implemented yet.</p>
-        </div>
-      {/if}
+      <div class="toy-header">
+        <button on:click={backToGallery} class="back">Back</button>
+      </div>
+      <div class="not-impl">
+        <h3>Not implemented</h3>
+        <p>
+          This toy is a placeholder in the gallery and has not been implemented
+          yet.
+        </p>
+      </div>
     {/if}
   </section>
 </main>

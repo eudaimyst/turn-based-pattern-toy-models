@@ -1,7 +1,3 @@
-// Stability vs Drift model
-// Equation: x[t+1] = (1 - a) * x[t] + b + N(0, sigma)
-// Exports: Params, State, defaultParams, initState, update
-
 import type { Params, State } from '../lib/types';
 
 export const defaultParams: Params = {
@@ -14,8 +10,6 @@ export function initState(x0 = 0): State {
   return { x: x0 };
 }
 
-// Simple RNG returning a standard normal using Box-Muller.
-// Exported for testability; deterministic seeding not provided here.
 export function randn(): number {
   let u = 0, v = 0;
   while (u === 0) u = Math.random();

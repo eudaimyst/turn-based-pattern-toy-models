@@ -1,4 +1,5 @@
-import { initState, update, type Params } from '../src/models/model-stability-vs-drift';
+import { initState, update } from '../src/models/model-stability-vs-drift';
+import type { Params } from '../src/lib/types';
 
 function approxEqual(a: number, b: number, eps = 1e-8) {
   return Math.abs(a - b) < eps;
