@@ -23,7 +23,11 @@
     init as initViz,
     destroy as destroyViz,
   } from "../visualizations/viz-stability-vs-drift";
-  import { defaultParams, initState, update } from "../models/model-stability-vs-drift";
+  import {
+    defaultParams,
+    initState,
+    update,
+  } from "../models/model-stability-vs-drift";
   import type { Params } from "../lib/types";
 
   let container: HTMLDivElement | null = null;

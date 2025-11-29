@@ -7,7 +7,7 @@
   // Each entry: id, name, placeholder color
   export const toys = [
   { id: "toy1", name: "Stability vs Drift", color: "#cbd5e0" },
-    { id: "threshold-response", name: "Threshold Response", color: "#e6fffa" },
+  { id: "toy2", name: "Threshold Response", color: "#e6fffa" },
     { id: "context-saturation", name: "Context Saturation", color: "#fef3c7" },
     { id: "coupling-strength", name: "Coupling Strength", color: "#ede9fe" },
     { id: "noise-sensitivity", name: "Noise Sensitivity", color: "#fff1f2" },
