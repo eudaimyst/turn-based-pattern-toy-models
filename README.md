@@ -20,5 +20,12 @@ Documentation is located in:
 
 Source code for visualizations is located in `/src` (Svelte + D3).
 
+Copilot Instructions
+
+For all automated code assistance, see:
+
+▶ COPILOT.md
+ — full development constraints, guardrails, and module requirements for this repository.
+
 This repository is intended for conceptual exploration and educational visualization.  
 It is not a scientific modeling tool.
