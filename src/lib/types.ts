@@ -12,4 +12,10 @@ export type State = {
 	x: number;
 };
 
+// 2D vector type used by vector-field toys
+export type Vec2 = {
+	x: number;
+	y: number;
+};
+
 // Add additional shared types below as needed.
