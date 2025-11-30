@@ -193,7 +193,7 @@ List only mathematical sources related to linear damped oscillators or discrete-
 ------------------------------------------------------------
 
 # Toy 4: Hysteresis / Path Dependence
-status: draft
+status: ready
 
 ## 1. Name
 Hysteresis / Path Dependence
@@ -280,6 +280,454 @@ Each toy component must:
 ## 12. References (Optional)
 Only cite mathematical or dynamical-systems sources relevant to hysteresis or path dependence.  
 Do not reference machine learning, psychology, or neuroscience.
+
+------------------------------------------------------------
+
+# Toy 5: Joint Context Vector Map
+status: ready
+
+## 1. Name
+Joint Context Vector Map
+
+## 2. Purpose
+To illustrate how a 2D interaction-state vector evolves under a simple linear update rule combining scaled prior state with an externally provided input vector. This demonstrates how directional pushes and scaling of prior state shape movement through an abstract feature space.
+
+## 3. Description (Required)
+This toy models a 2D state vector evolving under a linear update rule where the next state is a uniform scalar multiple of the current state plus an externally provided input vector. Adjusting the scalar multiplier and the input vector changes the trajectory through the plane. This demonstrates drift, stability, and vector influence in a simplified state-space representation. The model is purely algebraic and represents no cognitive, semantic, or internal processes.
+
+## 4. Mathematical Model
+x[t+1] = s * x[t] + u
+
+Where:
+- x[t] is a 2D state vector
+- s is a uniform scalar multiplier (state_scale)
+- u is a 2D externally provided input vector
+
+This is a linear update rule and does not resemble neural transformations, activation functions, or cognitive operations.
+
+## 5. Parameters (Sliders)
+
+| Parameter      | Meaning                                | Range  | Default |
+|----------------|-----------------------------------------|--------|---------|
+| input_x        | x-component of external vector u        | −1–1   | 0       |
+| input_y        | y-component of external vector u        | −1–1   | 0       |
+| state_scale (s)| scalar multiplier of the previous state | 0–1    | 0.8     |
+
+All sliders must display their current values numerically.
+
+## 6. Visualization Plan
+A 2D trajectory plot:
+- The point x[t] is drawn in the plane.
+- Successive positions are connected with a polyline.
+- A short trailing path highlights recent motion.
+The visualization depicts only geometric movement and does not imply any semantic or psychological content.
+
+## 7. What This Shows (Strictly External)
+- drift under external vector influence
+- stability or divergence depending on scalar s
+- path dependence in trajectory shape
+- vector influence patterns in 2D space
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, emotion, intention, or personality
+- memory beyond the explicit numerical recurrence
+- psychological states or social dynamics
+- neural network operations or internal mechanisms
+- any real conversational semantics or cognitive interpretation
+
+## 9. Limitations
+- simple 2D linear state only
+- no stochastic noise or non-linear effects
+- not predictive or diagnostic
+- does not represent linguistic or semantic behavior
+- state evolution constrained by linear update rule
+
+## 10. File Layout
+/src/models/model-toy5.ts  
+/src/visualizations/viz-toy5.ts  
+/src/components/Toy5.svelte
+
+These must be imported manually via App.svelte or the gallery component (the project uses Svelte + Vite, not SvelteKit).
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> containing the model description.
+2. Display numeric slider values next to each slider.
+3. Use TypeScript for all logic.
+4. Import update logic only from /src/models/.
+5. Import visualization logic only from /src/visualizations/.
+6. Maintain strict separation of concerns.
+7. Follow the structural outline used in Toy 1 and Toy 3.
+
+## 12. References (Optional)
+Only mathematical or dynamical-systems sources relevant to vector-field–style linear updates.  
+Do not reference machine learning, psychology, or neuroscience.
+
+------------------------------------------------------------
+
+# Toy 6: Constraint Drift
+status: ready
+
+## 1. Name
+Constraint Drift
+
+## 2. Purpose
+To illustrate how two independent 2D regions shift over time and how their changing positions alter the size and location of their geometric intersection. This demonstrates how external adjustments affect the overlap of simple constraint sets without implying internal mechanisms or cognitive processing.
+
+## 3. Description (Required)
+This toy uses two geometric regions in a 2D plane. Each region is translated according to externally controlled parameters. The intersection of the shifted regions changes continuously as the regions move. This models how the feasible overlap between two abstract constraint sets expands, contracts, appears, or disappears based solely on the relative positions of the regions. The model is static and does not use a recurrence relation.
+
+## 4. Mathematical Model
+Let R₁ and R₂ be fixed base shapes in 2D space.
+
+At time t:
+R₁(t) = R₁ shifted by (uₓ, uᵧ)
+R₂(t) = R₂ shifted by (mₓ, mᵧ)
+
+The intersection is:
+I(t) = R₁(t) ∩ R₂(t)
+
+Where:
+- (uₓ, uᵧ) controls the translation of region R₁
+- (mₓ, mᵧ) controls the translation of region R₂
+
+No recurrence relation is used; the state is fully determined by slider positions.
+
+## 5. Parameters (Sliders)
+
+| Parameter | Meaning | Range | Default |
+|----------|---------|--------|---------|
+| uₓ | horizontal shift of region R₁ | −1–1 | 0 |
+| uᵧ | vertical shift of region R₁ | −1–1 | 0 |
+| mₓ | horizontal shift of region R₂ | −1–1 | 0 |
+| mᵧ | vertical shift of region R₂ | −1–1 | 0 |
+
+Slider values must be displayed numerically.
+
+## 6. Visualization Plan
+A 2D plot showing:
+- region R₁ rendered as a semi-transparent shape
+- region R₂ rendered similarly
+- the geometric intersection shown as a distinct filled overlap
+Regions update smoothly as sliders change.  
+Visualization must remain purely geometric with no symbolic interpretation.
+
+## 7. What This Shows (Strictly External)
+- drift of geometric regions
+- appearance/disappearance of overlap depending on parameters
+- path dependence if shifts are applied sequentially
+- vector influence through 2D movement
+- threshold-like behavior when overlap transitions between zero and non-zero
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, intent, personality, or behavior
+- internal states, internal constraints, or memory mechanisms
+- neural network operations
+- human psychological processes or social dynamics
+- alignment or safety constraints
+- conversational or semantic meaning
+
+## 9. Limitations
+- purely geometric; no dynamical recurrence
+- assumes convex or simple polygonal regions
+- limited to 2D representation
+- simplified constraint interaction; not representative of real-world constraint systems
+- does not model any linguistic or cognitive processes
+
+## 10. File Layout
+/src/models/model-toy6.ts  
+/src/visualizations/viz-toy6.ts  
+/src/components/Toy6.svelte
+
+These files must be imported manually via App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> containing the model description.
+2. Display numeric slider values next to each slider.
+3. Use TypeScript for all logic.
+4. Import computational logic only from /src/models/.
+5. Import visualization logic only from /src/visualizations/.
+6. Maintain strict separation of concerns.
+7. Follow the component structure established by the earlier toys.
+
+## 12. References (Optional)
+Use only mathematical or geometrical references relevant to 2D region intersection and translation.  
+Do not reference machine learning, psychology, or cognitive science.
+
+------------------------------------------------------------
+
+# Toy 7: Context Saturation
+status: ready
+
+## 1. Name
+Context Saturation
+
+## 2. Purpose
+To illustrate how the influence of new input decreases as a saturation parameter increases. This toy demonstrates a simple linear weighting process in which the update becomes dominated by the prior state when saturation is high.
+
+## 3. Description (Required)
+This toy models a scalar update rule in which the next state is a weighted blend of a new external input and the previous state. As the saturation parameter S increases, the previous state receives more weight and the effect of new input decreases. This provides a simple visualization of reduced sensitivity to new signals as saturation grows. The model is fully algebraic and does not represent cognitive or internal processes.
+
+## 4. Mathematical Model
+x[t+1] = (1 − S) * u[t] + S * x[t]
+
+Where:
+- x[t] is the scalar state
+- u[t] is the external scalar input (new signal)
+- S ∈ [0, 1] controls the weighting applied to the prior state
+
+This linear recurrence is an abstract saturation rule and does not resemble activation functions, neural dynamics, or psychological processes.
+
+## 5. Parameters (Sliders)
+
+| Parameter | Meaning | Range | Default |
+|----------|----------|--------|---------|
+| S        | saturation weighting applied to x[t] | 0–1 | 0.5 |
+| u        | external input value | −1–1 | 0 |
+
+Slider values must be displayed numerically next to each slider.
+
+## 6. Visualization Plan
+A 1D time-series line plot showing x[t] over discrete update steps:
+- As S increases, changes between steps diminish.
+- As S decreases, the trajectory follows new inputs more closely.
+
+The graph must remain purely geometric without semantic or interpretive meaning.
+
+## 7. What This Shows (Strictly External)
+- stability under high saturation
+- drift driven by input values
+- saturation effects limiting change
+- linear vector influence through simple weighting
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, intention, personality, or behavior
+- memory beyond the explicit numerical recurrence
+- psychological or emotional processes
+- neural network mechanisms or activations
+- social or conversational dynamics
+
+## 9. Limitations
+- scalar state only
+- linear recurrence with no stochastic effects
+- simplified abstraction with no predictive or diagnostic use
+- not representative of conversational or semantic processes
+- visualization limited to 1D temporal evolution
+
+## 10. File Layout
+/src/models/model-toy7.ts  
+/src/visualizations/viz-toy7.ts  
+/src/components/Toy7.svelte
+
+These must be imported manually via App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> with this description.
+2. Display numeric slider values next to each slider.
+3. Use TypeScript for computational logic.
+4. Import update logic only from /src/models/.
+5. Import visualization logic only from /src/visualizations/.
+6. Maintain strict separation of concerns.
+7. Follow the structure used in earlier toys.
+
+## 12. References (Optional)
+Only cite mathematical or dynamical-systems sources relevant to scalar recurrence and saturation effects.  
+Do not reference machine learning, psychology, or neuroscience.
+
+------------------------------------------------------------
+
+# Toy 8: Noise Sensitivity
+status: ready
+
+## 1. Name
+Noise Sensitivity
+
+## 2. Purpose
+To illustrate how a scalar state evolves under additive random perturbations and how the magnitude of noise affects the variability of the trajectory. This demonstrates how different noise levels increase or reduce deviation in a simple update rule.
+
+## 3. Description (Required)
+This toy models a scalar update rule where each step adds a constant drift term and a noise term scaled by a user-controlled parameter. As noise_level increases, the trajectory shows larger fluctuations. At low noise, the scalar state changes more smoothly. The noise process is purely numerical and does not represent any internal model randomness or psychological variability.
+
+## 4. Mathematical Model
+x[t+1] = x[t] + d + n * r[t]
+
+Where:
+- x[t] is the scalar state
+- d is a constant baseline drift
+- n is the noise_level
+- r[t] is a uniform random sample in the range [−1, 1]
+
+Noise is independently sampled each step and represents a simple additive perturbation, not a cognitive or neural process.
+
+## 5. Parameters (Sliders)
+
+| Parameter | Meaning | Range | Default |
+|----------|----------|--------|---------|
+| noise_level (n) | amplitude of injected noise | 0–1 | 0.3 |
+| baseline_drift (d) | constant drift applied to state | −1–1 | 0 |
+
+Slider values must be displayed numerically next to each control.
+
+## 6. Visualization Plan
+A time-series line plot showing x[t] over discrete steps:
+- When noise_level is low, fluctuations are small.
+- When noise_level is high, fluctuations increase.
+The plot must remain purely geometric and informational with no interpretive meaning.
+
+## 7. What This Shows (Strictly External)
+- noise sensitivity
+- drift driven by constant d
+- stability or variability depending on noise amplitude
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, intention, personality, or emotion
+- memory or internal state beyond the scalar recurrence
+- neural network behavior or activation functions
+- psychological or behavioral processes
+- social or conversational dynamics
+
+## 9. Limitations
+- scalar state only
+- uniform additive noise; no other distributions
+- no coupling to additional variables or dimensions
+- simplified linear drift term
+- not predictive or diagnostic
+- does not represent semantic or conversational processes
+
+## 10. File Layout
+/src/models/model-toy8.ts  
+/src/visualizations/viz-toy8.ts  
+/src/components/Toy8.svelte
+
+Files must be manually imported via App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> containing the model description.
+2. Display numeric slider values next to each slider.
+3. Use TypeScript for all computational logic.
+4. Import model logic only from /src/models/.
+5. Import visualization logic only from /src/visualizations/.
+6. Maintain strict separation of concerns.
+7. Follow the component structure used in earlier toys.
+
+## 12. References (Optional)
+Only cite mathematical or dynamical-systems references relevant to additive noise in recurrence relations.  
+Do not reference machine learning, psychology, neuroscience, or cognitive science.
+
+------------------------------------------------------------
+
+# Toy 9: Impulse–Decay Response
+status: ready
+
+## 1. Name
+Impulse–Decay Response
+
+## 2. Purpose
+To illustrate how a scalar state responds to a temporary external impulse and then returns toward baseline under a decay coefficient. This demonstrates transient responses, decay dynamics, and simple return-to-baseline behavior in a linear recurrence.
+
+## 3. Description (Required)
+This toy models a scalar state updated by a linear decay rule with an optional impulse term. An impulse temporarily shifts the value, after which the decay parameter drives the state back toward baseline. This allows exploration of transient responses, the duration of elevated or reduced values, and the effect of decay strength. The scalar represents an abstract numerical quantity and does not correspond to mutual information or any internal AI metric.
+
+## 4. Mathematical Model
+x[t+1] = d * x[t] + I[t]
+
+Where:
+- x[t] is the scalar state
+- d ∈ [0, 1] is the decay coefficient
+- I[t] is an externally applied impulse (zero except when triggered)
+
+This recurrence is linear and strictly algebraic. It does not represent neural processes, internal model statistics, or cognitive behavior.
+
+## 5. Parameters (Sliders)
+
+| Parameter          | Meaning                                  | Range | Default |
+|-------------------|-------------------------------------------|-------|---------|
+| decay (d)         | decay coefficient moving x[t] toward baseline | 0–1   | 0.8     |
+| impulse_strength  | amplitude of the impulse applied when triggered | 0–1   | 0.5     |
+
+Additional control:
+- impulse_trigger: a one-time action (button) that sets I[t] = impulse_strength for a single update step
+
+Slider values must be displayed numerically.
+
+## 6. Visualization Plan
+A time-series plot showing x[t] over discrete steps:
+- When an impulse is triggered, the plot displays a temporary spike or dip.
+- Subsequent steps show decay toward baseline based on the decay coefficient.
+
+Visualization must remain purely geometric and non-interpretive.
+
+## 7. What This Shows (Strictly External)
+- stability under decay
+- drift effects via decay magnitude
+- transient impulse response
+- simple saturation toward baseline
+- sensitivity to external perturbations
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, intention, or emotion
+- memory beyond the explicit recurrence
+- neural network behavior or activations
+- internal states of an AI system
+- mutual information or any real statistical measurement
+- social or conversational mechanisms
+- semantic clarity or interpretive processes
+
+## 9. Limitations
+- scalar-only dynamic
+- linear recurrence with no stochastic term
+- impulse is deterministic
+- baseline behavior constrained by decay parameter
+- does not model real information-theoretic quantities or conversational statistics
+
+## 10. File Layout
+/src/models/model-toy9.ts  
+/src/visualizations/viz-toy9.ts  
+/src/components/Toy9.svelte
+
+These files must be imported manually via App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> with the description.
+2. Display numeric slider values next to each slider.
+3. Implement the impulse_trigger as a button or user action.
+4. Use TypeScript for logic.
+5. Import update logic only from /src/models/.
+6. Import visualization logic only from /src/visualizations/.
+7. Maintain strict UI/model/visualization separation.
+
+## 12. References (Optional)
+Only cite mathematical or dynamical-systems sources related to simple linear decay or impulse-response systems.  
+Do not reference mutual information, machine learning, psychology, or neural computation.
+
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+
+
 
 ------------------------------------------------------------
 
