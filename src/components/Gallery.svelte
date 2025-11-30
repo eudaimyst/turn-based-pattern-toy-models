@@ -6,32 +6,44 @@
   // Manually-defined toy list (no auto-discovery).
   // Each entry: id, name, placeholder color
   export const toys = [
+    // Keep the first entry exactly as-is (wiring depends on this id/name)
     { id: "toy1", name: "Stability vs Drift", color: "#cbd5e0" },
-    // Toy2 removed from scope
-    { id: "context-saturation", name: "Context Saturation", color: "#fef3c7" },
-    { id: "coupling-strength", name: "Coupling Strength", color: "#ede9fe" },
-    { id: "noise-sensitivity", name: "Noise Sensitivity", color: "#fff1f2" },
-    {
-      id: "attractor-landscape",
-      name: "Attractor Landscape",
-      color: "#ecfeff",
-    },
-    {
-      id: "hysteresis",
-      name: "Hysteresis / Path Dependence",
-      color: "#f0f9ff",
-    },
-    { id: "oscillation", name: "Oscillation (damped)", color: "#fefce8" },
-    {
-      id: "framing-field",
-      name: "Framing Field (vector influences)",
-      color: "#f8fafc",
-    },
-    {
-      id: "joint-context-vector",
-      name: "Joint Context Vector Map",
-      color: "#fff7ed",
-    },
+
+    // 2. Coupling Strength
+    { id: "toy2", name: "Coupling Strength", color: "#ede9fe" },
+
+    // 3. Oscillation (Damped)
+    { id: "toy3", name: "Oscillation (Damped)", color: "#fefce8" },
+
+    // 4. Hysteresis / Path Dependence
+    { id: "toy4", name: "Hysteresis / Path Dependence", color: "#f0f9ff" },
+
+    // 5. Joint Context Vector Map
+    { id: "toy5", name: "Joint Context Vector Map", color: "#fff7ed" },
+
+    // 6. Constraint Drift
+    { id: "toy6", name: "Constraint Drift", color: "#fff4f3" },
+
+    // 7. Context Saturation
+    { id: "toy7", name: "Context Saturation", color: "#fef3c7" },
+
+    // 8. Noise Sensitivity
+    { id: "toy8", name: "Noise Sensitivity", color: "#fff1f2" },
+
+    // 9. Mutual Information Pulse Response
+    { id: "toy9", name: "Mutual Information Pulse Response", color: "#eef2ff" },
+
+    // 10. Attractor Landscape
+    { id: "toy10", name: "Attractor Landscape", color: "#ecfeff" },
+
+    // 11. Framing Field
+    { id: "toy11", name: "Framing Field", color: "#f8fafc" },
+
+    // 12. Impulse Response
+    { id: "toy12", name: "Impulse Response", color: "#fffbeb" },
+
+    // 13. Bifurcation Explorer
+    { id: "toy13", name: "Bifurcation Explorer", color: "#f7fee7" },
   ];
 
   function select(id: string) {
