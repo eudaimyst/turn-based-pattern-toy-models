@@ -1,161 +1,83 @@
-# GitHub Copilot Development Instructions
-This repository contains a Svelte + TypeScript + D3.js project for visualizing simplified interaction dynamics using abstract mathematical toy models. Copilot must follow the constraints below for all generated code, comments, refactors, file scaffolding, and explanations.
+# COPILOT.md
+# How to Use Copilot for General Repository Tasks
+
+This file describes how developers should use GitHub Copilot for repository-wide work.  
+This includes refactoring, bug fixes, documentation improvements, and general feature updates unrelated to toy generation.
+
+For toy creation, see COPILOT.md and COPILOT_SYSTEM.md instead.
 
 ---
 
-## 1. Scope of the Project
-- Implement interactive visualizations of mathematical interaction dynamics.
-- Use abstract scalar variables only.
-- Represent observable input–output patterns, not internal processes of any system.
-- Do not model or describe cognition, psychology, emotion, memory, intention, identity, or internal AI mechanisms.
+## 1. How to Initialize Copilot for Repository-Wide Tasks
+
+Each time you want Copilot to assist with general development:
+
+1. Open a new Copilot Chat window
+2. Run this initialization command:
+Reset your context. Load and obey COPILOT_SYSTEM.md.
+3. Then describe the task you want performed.
+
+This ensures Copilot follows the repository’s safety and structural constraints.
 
 ---
 
-## 2. Required Technical Stack
-- **Svelte** for UI components.
-- **TypeScript** for model logic and typing.
-- **D3.js** for all visualizations.
-- **Vite** build setup (already configured).
-
-The project does not use SvelteKit. All navigation must rely on standard Svelte component composition.
-Do not generate SvelteKit routing files or conventions such as +page.svelte or +layout.svelte.
-Navigation between toys should be implemented using a neutral gallery component or a manually defined router written in Svelte.
-
-No additional frameworks or visualization libraries may be introduced without explicit instructions.
-
----
-
-## 3. Development Guardrails (Mandatory)
-Follow all rules defined in:
-- `docs/DEVELOPMENT-GUIDELINES.md`
-- `docs/TOY-TEMPLATE.md`
-- `docs/overview.md`
-
-Copilot must adhere to these constraints at all times:
-
-### 3.1 Prohibited Content
-Do **not**:
-- reference or imply neural networks, activations, embeddings, attention, or internal AI operations
-- describe any system as having cognition, memory, emotion, intent, agency, personality, or internal states
-- use metaphors, narrative language, or anthropomorphic framing
-- introduce psychological, affective, or interpretive descriptions
-- implement chaotic systems, bifurcation cascades, Hopfield networks, RNN-like recurrence, or NN-adjacent mathematical forms
-
-### 3.2 Allowed Mathematical Forms
-- linear recurrence relations
-- polynomial expressions
-- piecewise thresholds (non-sigmoid)
-- additive Gaussian noise
-- potential fields
-- damped oscillators
-- basic vector fields
-
-No sigmoid, tanh, softmax, ReLU, GELU, or similar NN-derived functions.
+## 2. What Copilot Can Help With
+Copilot may be used for:
+- Svelte component improvements
+- Vite configuration support
+- TypeScript type-safety fixes
+- refactoring /src/lib utilities
+- improving clarity of documentation
+- D3 visualization refinements
+- file-level commenting and explanation
+- adding developer ergonomics (scripts, utilities)
+- diagnosing code issues
 
 ---
 
-## 4. Repository Structure Requirements
-Copilot must generate code consistent with the existing architecture:
+## 3. What Copilot Should Avoid
+Copilot should NOT:
+- make changes to the toy framework unless instructed
+- modify toy specifications
+- weaken or reinterpret safety guardrails
+- introduce conceptual explanations involving cognition or model internals
+- replace verified mathematical descriptions with alternative formulations
 
-/src/models/ → pure mathematical model logic
-/src/visualizations/ → D3 visualization modules
-/src/components/ → Svelte components wrapping the visualization
-/src/lib/ → shared utilities and types
-docs/ → project documentation
-
-
-### Naming conventions:
-- Models: `model-{name}.ts`
-- Visualizations: `viz-{name}.ts`
-- Components: `Toy{Name}.svelte`
+For anything involving toy creation, use the “toy-generation” Copilot files instead.
 
 ---
 
-## 5. Toy Model Creation Rules
-When generating a new toy model, Copilot must follow the template in `docs/TOY-TEMPLATE.md` exactly.
+## 4. Recommended Workflow
+When performing general updates:
 
-Each new toy must include:
-1. A model file exporting:
-   - parameter definitions
-   - state types
-   - a pure `update(state, params)` function
-2. A visualization file:
-   - D3 initialization
-   - update routines
-3. A Svelte component:
-   - slider bindings
-   - state management
-   - rendering the visualization
+1. Open new chat
+2. Load COPILOT_SYSTEM_GLOBAL.md
+3. Describe the update in plain language
+4. Review the generated changes
+5. Apply manually through Git or allow Copilot to apply edits (VSCode)
 
-All code must compile without modification.
+Repeat the initialization for each major change or edit group.
 
 ---
 
-## 6. Documentation and Commenting Rules
-- Use neutral, technical language only.
-- Describe only mathematical behavior (e.g., damping, drift, noise, threshold).
-- Include limitations in code comments where relevant.
-- Do not use narrative explanations or interpretive language.
+## 5. Reference Documents
+Copilot should remain consistent with:
+
+- README.md  
+- docs/overview.md  
+- docs/development-guidelines.md  
+- docs/ethics.md  
+- docs/fundamentals.md  
+
+Developers should consult these when asking Copilot for help.
 
 ---
 
-## 7. Clarification Requirements
-If instructions from the user are incomplete, ambiguous, or conflict with the guardrails, Copilot must request clarification before generating output.
+## 6. Summary
+Use:
+- **COPILOT.md** + **COPILOT_SYSTEM.md** → toy generation
+- **COPILOT_GLOBAL.md** + **COPILOT_SYSTEM_GLOBAL.md** → general repo tasks
 
----
+This separation prevents context drift, ensures safety compliance, and keeps Copilot behavior predictable and maintainable.
 
-## 8. Output Quality Requirements
-All generated code must:
-- be modular and self-contained
-- avoid unnecessary global state
-- use strict TypeScript typing
-- follow Svelte best practices
-- maintain clean separation between model, visualization, and component layers
-- comply with the mathematical and conceptual constraints of the project
-
----
-
-## 9. Summary for Copilot
-When assisting in this repository, Copilot must:
-- follow the guardrails strictly
-- generate code only within the permitted domain
-- implement mathematical toy models without implying internal AI cognition or psychological processes
-- maintain the established architecture
-- ask clarifying questions when needed
-- remain consistent with all documentation in the /docs directory
-
-## Repository Structure
-/
-├── docs/
-│   ├── overview.md
-│   ├── development-guidelines.md
-│   ├── toy-template.md
-│   ├── toy-specs.txt        <-- human-authored specifications for each toy
-│   └── additional documentation files
-│
-├── src/
-│   ├── main.ts              <-- Vite entry point
-│   ├── App.svelte           <-- root component, loads Gallery or selected Toy
-│   │
-│   ├── components/
-│   │   ├── Gallery.svelte   <-- manually created home page listing all toys
-│   │   ├── Toy1.svelte
-│   │   ├── Toy3.svelte
-│   │   └── ... additional toy components
-│   │
-│   ├── models/              <-- pure mathematical model logic
-│   │   ├── model-toy1.ts
-│   │   └── ...
-│   │
-│   ├── visualizations/      <-- D3 visualization modules
-│   │   ├── viz-toy1.ts
-│   │   └── ...
-│   │
-│   └── lib/                 <-- shared utilities, types, helpers
-│
-├── public/                  <-- static assets
-│
-├── index.html               <-- root HTML for Vite
-├── package.json
-├── vite.config.js
-└── svelte.config.js
+End of COPILOT_GLOBAL.md
