@@ -1,8 +1,15 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
-  import { initState, update as modelUpdate, defaultParams, V as modelV, type Toy11Params, type Toy11State } from '../models/model-toy11';
-  import * as viz from '../visualizations/viz-toy11';
-  import type { Vec2 } from '../lib/types';
+  import { onMount, onDestroy } from "svelte";
+  import {
+    initState,
+    update as modelUpdate,
+    defaultParams,
+    V as modelV,
+    type Toy11Params,
+    type Toy11State,
+  } from "../models/model-toy11";
+  import * as viz from "../visualizations/viz-toy11";
+  import type { Vec2 } from "../lib/types";
 
   let container: HTMLDivElement | null = null;
 
@@ -27,7 +34,8 @@
     const tick = () => {
       if (!running) return;
       state = modelUpdate(state, params);
-      if (vizHandle) viz.update(vizHandle, state, (p: Vec2) => modelV(p, params));
+      if (vizHandle)
+        viz.update(vizHandle, state, (p: Vec2) => modelV(p, params));
       setTimeout(tick, stepInterval);
     };
     tick();
@@ -44,26 +52,35 @@
   });
 </script>
 
-<style>
-.controls { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.5rem; }
-.controls label { display: flex; flex-direction: column; font-size: 0.9rem; }
-.visualization { border: 1px solid #ddd; }
-.toy-description { margin-top: 1rem; font-size: 0.95rem; color: #222 }
-</style>
-
 <h2>Framing Field (Vector Influence)</h2>
 <section class="toy-description">
-  To illustrate how a 2D state evolves in response to a vector field defined over an abstract coordinate space. A point moves by adding the local vector at its position. Scaling and rotating the vector field modifies the flow pattern. This is a geometric vector-field update and carries no semantic or cognitive meaning.
+  To illustrate how a 2D state evolves in response to a vector field defined
+  over an abstract coordinate space. A point moves by adding the local vector at
+  its position. Scaling and rotating the vector field modifies the flow pattern.
+  This is a geometric vector-field update and carries no semantic or cognitive
+  meaning.
 </section>
 
-  <div class="controls">
+<div class="controls">
   <label>
     vector_strength ({params.vector_strength.toFixed(2)})
-    <input type="range" min="0" max="2" step="0.01" bind:value={params.vector_strength} />
+    <input
+      type="range"
+      min="0"
+      max="2"
+      step="0.01"
+      bind:value={params.vector_strength}
+    />
   </label>
   <label>
     vector_rotation ({params.vector_rotation.toFixed(0)}°)
-    <input type="range" min="0" max="360" step="1" bind:value={params.vector_rotation} />
+    <input
+      type="range"
+      min="0"
+      max="360"
+      step="1"
+      bind:value={params.vector_rotation}
+    />
   </label>
   <label>
     initial_x ({initial_x.toFixed(2)})
@@ -73,7 +90,33 @@
     initial_y ({initial_y.toFixed(2)})
     <input type="range" min="-1" max="1" step="0.01" bind:value={initial_y} />
   </label>
-  <button on:click={() => { state = initState({ x: initial_x, y: initial_y }); }}>Reset</button>
+  <button
+    on:click={() => {
+      state = initState({ x: initial_x, y: initial_y });
+    }}>Reset</button
+  >
 </div>
 
 <div bind:this={container} class="visualization"></div>
+
+<style>
+  .controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .controls label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+  .visualization {
+    border: 1px solid #ddd;
+  }
+  .toy-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #222;
+  }
+</style>
