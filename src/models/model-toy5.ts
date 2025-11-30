@@ -1,6 +1,37 @@
-export type ModelState = { t: number; x: number; y: number };
+/**
+ * Toy 5 Model: Joint Context Vector Map
+ *
+ * Implements the linear 2D update rule from docs/toy-specs.md:
+ *
+ * x[t+1] = s * x[t] + u
+ *
+ * where x is a 2D vector and u is an external 2D input vector.
+ * This module contains ONLY pure mathematical update logic.
+ */
 
-export function step(state: ModelState, input = { x: 0, y: 0 }): ModelState {
-  // Placeholder: joint vector map step
-  return { t: state.t + 1, x: state.x * 0.98 + input.x, y: state.y * 0.98 + input.y };
+export type Params = {
+  state_scale: number; // s in [0,1]
+};
+
+export type State = {
+  x: number; // x-component of state
+  y: number; // y-component of state
+};
+
+export const defaultParams: Params = {
+  state_scale: 0.8,
+};
+
+export function initState(x = 0, y = 0): State {
+  return { x, y };
+}
+
+/**
+ * Pure update: given current state and params, and an external input vector `u`,
+ * return the next state according to the linear rule x[t+1] = s * x[t] + u.
+ */
+export function update(state: State, params: Params, input = { x: 0, y: 0 }): State {
+  const nextX = params.state_scale * state.x + input.x;
+  const nextY = params.state_scale * state.y + input.y;
+  return { x: nextX, y: nextY };
 }
