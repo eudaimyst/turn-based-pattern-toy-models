@@ -64,7 +64,7 @@ A simplified mathematical construct illustrating an interaction pattern.
 1. Stability vs Drift
 2. Coupling Strength
 3. Oscillation (Damped)
-4. Hysteresis / Path Dependence
+4. Path Dependence
 5. Joint Context Vector Map
 6. Constraint Drift
 7. Context Saturation

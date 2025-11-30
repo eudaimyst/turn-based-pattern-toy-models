@@ -15,8 +15,8 @@
     // 3. Oscillation (Damped)
     { id: "toy3", name: "Oscillation (Damped)", color: "#fefce8" },
 
-    // 4. Hysteresis / Path Dependence
-    { id: "toy4", name: "Hysteresis / Path Dependence", color: "#f0f9ff" },
+    // 4. Path Dependence
+    { id: "toy4", name: "Path Dependence", color: "#f0f9ff" },
 
     // 5. Joint Context Vector Map
     { id: "toy5", name: "Joint Context Vector Map", color: "#fff7ed" },

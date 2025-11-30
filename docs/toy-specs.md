@@ -192,94 +192,90 @@ List only mathematical sources related to linear damped oscillators or discrete-
 
 ------------------------------------------------------------
 
-# Toy 4: Hysteresis / Path Dependence
+# Toy 4: Path Dependence
 status: ready
 
 ## 1. Name
-Hysteresis / Path Dependence
+Path Dependence
 
 ## 2. Purpose
-To illustrate a direction-sensitive update rule in which the next state depends on both the current value and the recent directional input, producing path-dependent trajectories. This demonstrates how different sequences of external inputs yield different outputs even when start and end points match.
+To illustrate a direction-sensitive update rule in which the next state depends on whether the external input lies above or below the current state. This produces path dependence: different input sequences can yield distinct trajectories even when start and end points match.
 
 ## 3. Description (Required)
-This toy models a simple form of hysteresis in which the next state reflects both its prior value and a direction-like external input. The update rule blends the existing state with a direction input using a weighting parameter. Because the update depends on both magnitude and direction of prior changes, different input sequences produce distinct trajectories, even if they pass through the same points. This is a numerical illustration of path dependence, not a representation of cognitive memory or internal states.
+This toy models a scalar update rule in which upward and downward transitions use different weighting parameters. When the external input is greater than the current state, one weight governs the update; when it is smaller, a separate weight applies. This asymmetry creates path-dependent behavior. The model is purely algebraic and does not represent cognitive memory or internal processes.
 
 ## 4. Mathematical Model
-For 1D:
-x[t+1] = (1 − w) * x[t] + w * u[t]
+Let x[t] be a scalar state and u[t] the external input.
+
+If u[t] > x[t]:
+ x[t+1] = x[t] + w_up * (u[t] − x[t])
+Else:
+ x[t+1] = x[t] + w_down * (u[t] − x[t])
 
 Where:
-- x[t] is the scalar state
-- u[t] is an external direction input in the range [−1, 1]
-- w is the path-weight parameter in the range [0, 1]
+- w_up ∈ [0, 1] applies when the update direction is positive
+- w_down ∈ [0, 1] applies when the update direction is negative
 
-Optional 2D extension for visualization:
-x[t+1] = (1 − w) * x[t] + w * uₓ[t]
-y[t+1] = (1 − w) * y[t] + w * uᵧ[t]
-
-The 2D version is only for visualization clarity and does not add conceptual complexity.  
-No part of this model represents psychological momentum, internal intent, or persistence beyond the defined linear rule.
+This is a linear directional path dependence rule with no nonlinear terms or internal-state implications.
 
 ## 5. Parameters (Sliders)
 
 | Parameter | Meaning | Range | Default |
-|----------|---------|--------|---------|
-| u        | external direction input | −1–1 | 0 |
-| w        | path-weight parameter controlling influence of prior direction | 0–1 | 0.5 |
+|-----------|----------|--------|---------|
+| input (u) | external scalar input | −1–1 | 0 |
+| w_up | weight used for upward transitions | 0–1 | 0.5 |
+| w_down | weight used for downward transitions | 0–1 | 0.5 |
 
-All sliders must display their current numeric values next to the controls.
+All slider values must be displayed numerically.
 
 ## 6. Visualization Plan
-A 2D trajectory plot comparing different sequences of directional inputs:
-- Axes: (x, y) if using the 2D state; or (time, x) with multiple trajectories in 1D mode
-- Each trajectory is displayed with a distinct neutral color
-- Visualization emphasizes differences arising from different input paths
+A 2D trajectory plot showing multiple captured state paths:
+- Each path corresponds to a sequence of user-controlled inputs
+- Paths are displayed as separate polylines
+- The plot highlights divergence between trajectories caused by direction-sensitive updates
 
-The plot must not imply emotion, mode switching, or internal cognitive states.
+Visualization must remain purely geometric with no metaphorical or interpretive meaning.
 
 ## 7. What This Shows (Strictly External)
-- path dependence through weighted update rules
-- drift based on direction history
-- stability effects depending on w
-- vector influence patterns (in 2D mode)
+- drift under asymmetric update weights
+- path dependence
+- stability effects depending on w_up and w_down
+- vector-influence-like directional asymmetry
 
 ## 8. What This Does Not Imply
 This model does not represent:
-- AI cognition, emotion, intention, or personality
-- psychological memory or internal state
-- neural network activation or recurrence mechanisms
+- AI cognition, emotion, personality, or intent
+- memory beyond explicit scalar recurrence
+- internal states or psychological processes
+- neural network behavior or activation mechanisms
 - social or conversational dynamics
-- real human reasoning or behavior
-- internal modes, shifting states, or latent structure
 
 ## 9. Limitations
-- scalar or low-dimensional state only
-- simplified linear weighting of historical direction
-- no stochastic effects unless added explicitly
-- does not reflect linguistic content or real conversational processes
-- path dependence arises solely from the linear rule defined
+- scalar state variable only
+- direction sensitivity arises solely from the two weight parameters
+- linear update rule with no nonlinearities
+- not predictive or diagnostic
+- does not model conversational or semantic processes
 
 ## 10. File Layout
 /src/models/model-toy4.ts  
 /src/visualizations/viz-toy4.ts  
 /src/components/Toy4.svelte
 
-Files must be imported manually via the gallery or App.svelte.  
-The project uses Svelte + Vite, not SvelteKit, so no file-based routing is available.
+These files must be manually imported in App.svelte and the gallery.
 
 ## 11. Svelte Component Requirements
 Each toy component must:
-1. Include a <section class="toy-description"> containing the model description.
-2. Display numeric slider values beside each control.
+1. Include a <section class="toy-description"> containing the description.
+2. Display numeric values beside all sliders.
 3. Use TypeScript for all logic.
-4. Import update logic solely from /src/models/.
-5. Import visualization logic solely from /src/visualizations/.
-6. Maintain strict separation of concerns.
-7. Use a structural outline consistent with Toy 1 and Toy 3.
+4. Import model logic from /src/models/ and visualization logic from /src/visualizations/.
+5. Maintain strict separation between UI, model, and visualization.
+6. Follow the structural pattern used in earlier toys.
 
 ## 12. References (Optional)
-Only cite mathematical or dynamical-systems sources relevant to hysteresis or path dependence.  
-Do not reference machine learning, psychology, or neuroscience.
+Only cite mathematical or dynamical-systems references on direction-sensitive update rules.  
+Do not reference machine learning, psychology, or cognitive science.
 
 ------------------------------------------------------------
 

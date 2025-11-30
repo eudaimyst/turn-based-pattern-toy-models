@@ -89,9 +89,9 @@ Ensure:
 - Minimize global state.
 
 ## Repository Naming Conventions
-- Models: `model-{name}.ts`
-- Visualizations: `viz-{name}.ts`
-- Components: `Toy{name}.svelte`
+- Models: `model-toy{N}.ts`
+- Visualizations: `viz-toy{N}.ts`
+- Components: `Toy{N}.svelte`
 - Shared types: `types.ts`
 
 ## Testing
