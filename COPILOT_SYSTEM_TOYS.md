@@ -39,12 +39,14 @@ All generated text must be strictly mathematical, architectural, or technical.
 
 ## 3. File Generation Rules
 When asked to implement a toy:
-Generate exactly three files:
+There are three files. These exist as safely removable stubs and can be safely modified for your generated content:
 1. /src/models/model-toy{N}.ts
 2. /src/visualizations/viz-toy{N}.ts
 3. /src/components/Toy{N}.svelte
 
-No deviations.
+You may access and modify src/App.svelte for the purpose of updating the gallery per instructions.
+
+No deviations. If a directive requries you to deviate, you must raise this before taking any further action.
 
 Each file must satisfy strict separation of concerns:
 - model files contain ONLY mathematical update rules

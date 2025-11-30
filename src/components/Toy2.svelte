@@ -5,17 +5,23 @@
    * Purpose: illustrate coupling between prior state and external scalar input.
    */
 
-  import { onMount, onDestroy } from 'svelte';
-  import { init as initViz, destroy as destroyViz } from '../visualizations/viz-toy2';
-  import { defaultParams, initState, update } from '../models/model-toy2';
-  import type { Params } from '../models/model-toy2';
+  import { onMount, onDestroy } from "svelte";
+  import {
+    init as initViz,
+    destroy as destroyViz,
+  } from "../visualizations/viz-toy2";
+  import { defaultParams, initState, update } from "../models/model-toy2";
+  import type { Params } from "../models/model-toy2";
 
   let container: HTMLDivElement | null = null;
   let params: Params = { ...defaultParams };
   let state = initState(0);
   let history: Array<{ x: number; u: number }> = [];
 
-  let viz: { render: (h: Array<{ x: number; u: number }>) => void; resize: (w: number, h: number) => void } | null = null;
+  let viz: {
+    render: (h: Array<{ x: number; u: number }>) => void;
+    resize: (w: number, h: number) => void;
+  } | null = null;
 
   let running = true;
   let stepInterval = 200;
@@ -77,11 +83,17 @@
 
       <label>
         u (external input)
-        <input type="range" min="-1" max="1" step="0.01" bind:value={params.u} />
+        <input
+          type="range"
+          min="-1"
+          max="1"
+          step="0.01"
+          bind:value={params.u}
+        />
         <span class="val">{params.u.toFixed(2)}</span>
       </label>
 
-      <button on:click={toggleRunning}>{running ? 'Pause' : 'Run'}</button>
+      <button on:click={toggleRunning}>{running ? "Pause" : "Run"}</button>
       <button on:click={reset}>Reset</button>
     </div>
   </header>
@@ -100,4 +112,3 @@
     font-size: 0.85rem;
   }
 </style>
- 
