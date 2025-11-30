@@ -16,6 +16,7 @@
   import Toy10 from "./components/Toy10.svelte";
   import Toy11 from "./components/Toy11.svelte";
   import Toy12 from "./components/Toy12.svelte";
+  import Toy13 from "./components/Toy13.svelte";
   import Gallery from "./components/Gallery.svelte";
 
   // selectedToy: null shows gallery; otherwise render the chosen toy
@@ -101,6 +102,11 @@
         <button on:click={backToGallery} class="back">Back</button>
       </div>
       <Toy12 />
+    {:else if selectedToy === "toy13"}
+      <div class="toy-header">
+        <button on:click={backToGallery} class="back">Back</button>
+      </div>
+      <Toy13 />
     {:else}
       <div class="toy-header">
         <button on:click={backToGallery} class="back">Back</button>

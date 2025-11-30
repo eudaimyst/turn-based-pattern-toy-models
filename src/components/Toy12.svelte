@@ -1,17 +1,23 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
-  import { init as initViz, destroy as destroyViz } from '../visualizations/viz-toy12';
-  import { defaultParams, initState, update } from '../models/model-toy12';
-  import type { Params, State } from '../models/model-toy12';
+  import { onMount, onDestroy } from "svelte";
+  import {
+    init as initViz,
+    destroy as destroyViz,
+  } from "../visualizations/viz-toy12";
+  import { defaultParams, initState, update } from "../models/model-toy12";
+  import type { Params, State } from "../models/model-toy12";
 
-  export const id = 'toy12';
+  export const id = "toy12";
 
   let container: HTMLDivElement | null = null;
   let params: Params = { ...defaultParams } as Params;
   let state: State = initState(0);
   let history: number[] = [state.x];
 
-  let viz: { render: (h: number[]) => void; resize: (w: number, h: number) => void } | null = null;
+  let viz: {
+    render: (h: number[]) => void;
+    resize: (w: number, h: number) => void;
+  } | null = null;
 
   let running = true;
   const stepInterval = 100; // ms
@@ -72,24 +78,44 @@
     <div class="controls">
       <label>
         update_gain (g)
-        <input type="range" min="-1" max="1" step="0.01" bind:value={params.update_gain} />
+        <input
+          type="range"
+          min="-1"
+          max="1"
+          step="0.01"
+          bind:value={params.update_gain}
+        />
         <span class="val">{params.update_gain.toFixed(2)}</span>
       </label>
 
       <label>
         impulse_gain (h)
-        <input type="range" min="0" max="1" step="0.01" bind:value={params.impulse_gain} />
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          bind:value={params.impulse_gain}
+        />
         <span class="val">{params.impulse_gain.toFixed(2)}</span>
       </label>
 
       <label>
         impulse_magnitude
-        <input type="range" min="0" max="1" step="0.01" bind:value={params.impulse_magnitude} />
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          bind:value={params.impulse_magnitude}
+        />
         <span class="val">{params.impulse_magnitude.toFixed(2)}</span>
       </label>
 
       <button on:click={triggerImpulse}>Impulse</button>
-      <button on:click={() => (running = !running)}>{running ? 'Pause' : 'Run'}</button>
+      <button on:click={() => (running = !running)}
+        >{running ? "Pause" : "Run"}</button
+      >
       <button on:click={reset}>Reset</button>
     </div>
   </header>
@@ -114,4 +140,3 @@
     margin-left: 0.5rem;
   }
 </style>
-
