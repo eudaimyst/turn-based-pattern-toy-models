@@ -83,9 +83,16 @@ Examples:
 
 ## 10. File Layout
 List the files required for the new toy:
-src/models/model-{name}.ts
-src/visualizations/viz-{name}.ts
-src/components/Toy{Name}.svelte
+/src/models/model-toy{N}.ts <-- mathematical model
+/src/visualizations/viz-toy{N}.ts <-- D3 visualization logic
+/src/components/Toy{N}.svelte <-- UI component with sliders + render
+
+Examples:
+- Toy 1 → model-toy1.ts, viz-toy1.ts, Toy1.svelte  
+- Toy 3 → model-toy3.ts, viz-toy3.ts, Toy3.svelte
+
+These must be imported manually by the gallery or App.svelte.  
+There is no automatic routing (the project uses Svelte + Vite, not SvelteKit).
 
 ## 11. Svelte Component Requirements
 Each toy component must:

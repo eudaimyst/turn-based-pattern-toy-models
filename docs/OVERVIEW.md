@@ -61,15 +61,19 @@ A simplified mathematical construct illustrating an interaction pattern.
 
 ## Toy Models Included
 
-1. Stability vs Drift  
-2. Context Saturation  
-4. Coupling Strength  
-5. Noise Sensitivity  
-6. Attractor Landscape (abstract potential wells)  
-7. Hysteresis / Path Dependence  
-8. Oscillation (damped)  
-9. Framing Field (vector influences)  
-10. Joint Context Vector Map  
+1. Stability vs Drift
+2. Coupling Strength
+3. Oscillation (Damped)
+4. Hysteresis / Path Dependence
+5. Joint Context Vector Map
+6. Constraint Drift
+7. Context Saturation
+8. Noise Sensitivity
+9. Mutual Information Pulse Response
+10. Attractor Landscape
+11. Framing Field
+12. Impulse Response
+13. Bifurcation Explorer
 
 Each toy model includes:
 - equation
