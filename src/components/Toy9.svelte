@@ -72,9 +72,13 @@
     <h3>Impulse–Decay Response</h3>
     <section class="toy-description">
       <p>
-        This toy models the scalar recurrence <code>x[t+1] = d * x[t] + I[t]</code> where
-        <strong>d</strong> is the decay coefficient and <strong>I[t]</strong> is an externally applied impulse
-        (zero except when the impulse is triggered). Use the sliders to adjust parameters and press
+        This toy models the scalar recurrence <code
+          >x[t+1] = d * x[t] + I[t]</code
+        >
+        where
+        <strong>d</strong> is the decay coefficient and <strong>I[t]</strong> is
+        an externally applied impulse (zero except when the impulse is
+        triggered). Use the sliders to adjust parameters and press
         <em>Trigger Impulse</em> to apply a one-step impulse of the chosen amplitude.
       </p>
     </section>
@@ -124,4 +128,3 @@
     font-size: 0.85rem;
   }
 </style>
-
