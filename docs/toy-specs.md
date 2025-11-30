@@ -711,18 +711,362 @@ Do not reference mutual information, machine learning, psychology, or neural com
 
 ------------------------------------------------------------
 
+# Toy 10: Attractor Landscape (Potential Wells)
+status: ready
+
+## 1. Name
+Attractor Landscape (Potential Wells)
+
+## 2. Purpose
+To illustrate how a point in a 2D space evolves under the influence of a scalar potential function. Local minima act as unlabeled mathematical attractor regions, and the update rule pulls the state toward these minima. This demonstrates drift, settling, and noise-affected motion in a simple potential landscape.
+
+## 3. Description (Required)
+This toy uses a 2D scalar potential function U(x, y). The gradient of U determines the direction of movement: the state moves “downhill” toward lower potential values. A small noise term can be added to create perturbations in the trajectory. By modifying the location and steepness of a single well, the user can observe how the state moves through the landscape. This is a purely mathematical gradient-based update and does not represent cognition, optimization, neural training, or internal model states.
+
+## 4. Mathematical Model
+For a state vector x[t] = (x, y):
+
+x[t+1] = x[t] − ∇U(x[t]) + η[t]
+
+Where:
+- U(x, y) = a * (x − px)² + a * (y − py)²
+- ∇U(x, y) = (2a(x − px), 2a(y − py))
+- a is the steepness parameter
+- (px, py) is the potential-well center
+- η[t] is a random 2D noise vector scaled by noise_level
+
+Noise represents a small external perturbation and has no semantic or cognitive meaning.
+
+## 5. Parameters (Sliders)
+
+| Parameter      | Meaning                                          | Range   | Default |
+|----------------|--------------------------------------------------|---------|---------|
+| well_depth     | steepness parameter a                            | 0–2     | 1.0     |
+| well_position_x| x-coordinate of well center                      | −1–1    | 0       |
+| well_position_y| y-coordinate of well center                      | −1–1    | 0       |
+| noise_level    | magnitude of 2D perturbation η[t]                | 0–0.3   | 0.05    |
+
+Slider values must be displayed numerically.
+
+## 6. Visualization Plan
+A 2D heatmap or contour map showing the potential function U(x, y):
+- darker/lower regions represent lower potential values
+- a point representing x[t] moves under the update rule
+- a short trajectory tail shows recent motion
+
+Visualization must remain purely geometric and must not imply cognitive states, neural optimization, or internal meaning.
+
+## 7. What This Shows (Strictly External)
+- drift toward low-potential regions
+- stability near minima
+- noise sensitivity
+- unlabeled mathematical attractors
+- path dependence under noise or directional variation
+- vector influence from ∇U(x, y)
+
+## 8. What This Does Not Imply
+This toy does not represent:
+- AI cognition, intention, or internal states
+- psychological attractors or behavioral modes
+- neural optimization, gradient descent training, or loss landscapes
+- semantic meaning or understanding
+- social or conversational processes
+
+## 9. Limitations
+- 2D state space only
+- restricted to simple polynomial potentials
+- no multi-well interactions unless explicitly added
+- gradient is analytically constrained
+- not predictive or diagnostic
+- does not represent any form of real-world cognitive or semantic dynamics
+
+## 10. File Layout
+/src/models/model-toy10.ts  
+/src/visualizations/viz-toy10.ts  
+/src/components/Toy10.svelte
+
+Files must be manually imported via App.svelte or the gallery component.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> with this description.
+2. Display numeric slider values next to each slider.
+3. Use TypeScript for all computational logic.
+4. Import model logic exclusively from /src/models/.
+5. Import visualization logic exclusively from /src/visualizations/.
+6. Maintain strict separation of concerns (UI vs. model vs. visualization).
+7. Follow the component structure used in earlier toys.
+
+## 12. References (Optional)
+Only cite mathematical sources related to potential functions, gradient fields, and simple attractor landscapes.  
+Do not reference machine learning optimization, psychology, or cognitive science.
 
 
 ------------------------------------------------------------
 
+# Toy 11: Framing Field (Vector Influence)
+status: draft
+
+## 1. Name
+Framing Field (Vector Influence)
+
+## 2. Purpose
+To illustrate how a 2D state evolves in response to a vector field defined over an abstract coordinate space. This toy demonstrates how a point’s movement is shaped by the local vector at its position, showing drift, vector influence, and trajectory differences arising from varying initial conditions.
+
+## 3. Description (Required)
+This toy represents the state as a point in a 2D plane. A vector field V(x, y) assigns a 2D direction to each coordinate. On each update, the state moves by adding the local vector to its current position. Scaling and rotating the vector field modifies the flow pattern. This is a purely geometric and algebraic vector-field update and carries no semantic, cognitive, or internal meaning.
+
+## 4. Mathematical Model
+Let x[t] be a 2D vector.
+
+x[t+1] = x[t] + V(x[t])
+
+Where:
+- V(x, y) is a 2D vector field defined over the plane
+- The field may be globally scaled by a scalar s (vector_strength)
+- The field may be globally rotated by an angle θ (vector_rotation)
+
+This update rule is deterministic and does not represent interpretive framing, semantic movement, neural mechanisms, or internal state transitions.
+
+## 5. Parameters (Sliders)
+
+| Parameter        | Meaning                                          | Range         | Default |
+|------------------|--------------------------------------------------|---------------|---------|
+| vector_strength  | uniform scalar multiplier applied to V(x, y)     | 0–2           | 1.0     |
+| vector_rotation  | global rotation angle applied to the vector field| 0–360 degrees | 0       |
+
+All slider values must be displayed numerically.
+
+## 6. Visualization Plan
+A 2D vector field plot:
+- Sampled grid of arrows showing V(x, y)
+- A point representing x[t] moves according to the update rule
+- A short trailing line shows recent movement
+
+Visualization must remain strictly geometric and must not imply any form of semantic mapping or internal model structure.
+
+## 7. What This Shows (Strictly External)
+- drift produced by vector addition
+- vector influences on trajectory direction
+- stability when vectors approach zero magnitude
+- path dependence via initial position differences
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, emotion, intent, personality, or behavior
+- memory beyond the numerical recurrence
+- psychological or semantic framing
+- neural network mechanisms or latent-space flow
+- internal states of an AI system
+- conversational or social processes
+
+## 9. Limitations
+- 2D abstraction only
+- simplified vector field construction
+- deterministic updates with no noise term
+- no non-linear transformations beyond vector field definition
+- does not represent any real cognitive, semantic, or conversational structure
+
+## 10. File Layout
+/src/models/model-toy11.ts  
+/src/visualizations/viz-toy11.ts  
+/src/components/Toy11.svelte
+
+Files must be manually imported into App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> with the model description.
+2. Display numeric slider values next to each control.
+3. Use TypeScript for all logic.
+4. Import update logic only from /src/models/.
+5. Import visualization logic only from /src/visualizations/.
+6. Maintain strict separation between UI, computation, and visualization.
+7. Follow the structure used in earlier toys.
+
+## 12. References (Optional)
+Only cite mathematical or dynamical-systems sources relevant to vector fields and geometric flow.  
+Do not reference ML, psychology, cognitive science, or neural optimization.
 
 
 ------------------------------------------------------------
 
+# Toy 12: Impulse Response
+status: draft
 
+## 1. Name
+Impulse Response
+
+## 2. Purpose
+To illustrate how a scalar state responds to a one-step external perturbation and how the state subsequently returns toward baseline, stabilizes, or drifts depending on update parameters. The toy demonstrates transient response behavior using a simple linear recurrence.
+
+## 3. Description (Required)
+This toy models a scalar update rule in which the next state is a weighted combination of the previous state and an externally applied impulse. The impulse occurs once when activated by the user. After the impulse, the state evolves according to the update rule determined by the update_gain parameter. Depending on the parameter values, the trajectory may decay, drift, or remain elevated. This is a purely algebraic recurrence and does not represent any cognitive, neural, or internal AI process.
+
+## 4. Mathematical Model
+x[t+1] = g * x[t] + h * I[t]
+
+Where:
+- x[t] is the scalar state
+- g is the update_gain (0–1 by default)
+- h is the impulse_gain
+- I[t] is the impulse event, equal to impulse_magnitude only during the activation step and zero otherwise
+
+Optional extension:
+If negative values of g are explicitly enabled, oscillatory decay can be demonstrated. This is strictly a numerical effect and does not represent cognitive or behavioral reversal.
+
+## 5. Parameters (Sliders)
+
+| Parameter           | Meaning                                           | Range | Default |
+|---------------------|---------------------------------------------------|--------|---------|
+| update_gain (g)     | influence of previous state on next state         | 0–1 (or extended to −1–1 if oscillation enabled) | 0.8 |
+| impulse_gain (h)    | scaling of the impulse amplitude                  | 0–1   | 0.5     |
+| impulse_magnitude   | magnitude of one-step impulse event               | 0–1   | 1.0     |
+
+Additional control:
+- impulse_trigger: a button or user action that sets I[t] = impulse_magnitude for a single step
+
+All slider values must be displayed numerically.
+
+## 6. Visualization Plan
+A 1D time-series line plot showing x[t] across update steps:
+- The impulse appears as a single-step jump.
+- The recurrence then produces decay, drift, or stabilization depending on update_gain.
+- If enabled, negative update_gain produces oscillatory decay.
+
+Visualization must remain geometric and non-interpretive.
+
+## 7. What This Shows (Strictly External)
+- stability under high update_gain
+- drift driven by impulse and update parameters
+- noise-like transient from a single perturbation
+- potential oscillation (if negative g allowed)
+- linear vector influence in the recurrence
+
+## 8. What This Does Not Imply
+This toy does not represent:
+- AI cognition, emotion, intent, or personality
+- memory beyond the explicit numerical recurrence
+- neural network updates, gradients, or training behavior
+- psychological or behavioral reactions
+- social or conversational processes
+
+## 9. Limitations
+- scalar-only state
+- linear update rule
+- impulse applied at only one time step
+- no stochastic variability unless added externally
+- not predictive or diagnostic
+- does not represent semantics or conversational dynamics
+
+## 10. File Layout
+/src/models/model-toy12.ts  
+/src/visualizations/viz-toy12.ts  
+/src/components/Toy12.svelte
+
+These files must be imported manually via App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> containing the description.
+2. Display numeric slider values next to each slider.
+3. Implement impulse_trigger as a user-activated action setting I[t] for one update.
+4. Use TypeScript for computational logic.
+5. Import update logic only from /src/models/.
+6. Import visualization logic only from /src/visualizations/.
+7. Maintain strict separation between UI, model, and visualization.
+8. Follow the structure used in earlier toys.
+
+## 12. References (Optional)
+Only cite mathematical or dynamical-systems sources relevant to linear impulse-response systems.  
+Do not reference machine learning, psychology, neuroscience, or cognitive science.
 
 ------------------------------------------------------------
 
+# Toy 13: Parameter-Bifurcation Explorer
+status: draft
+
+## 1. Name
+Parameter-Bifurcation Explorer
+
+## 2. Purpose
+To illustrate how a scalar nonlinear recurrence changes its long-term behavior as a control parameter varies. This toy demonstrates mathematical regime changes such as fixed points, periodic cycles, and high-variability regions produced strictly by the recurrence rule. These effects are numerical only and carry no cognitive or internal meaning.
+
+## 3. Description (Required)
+This toy uses a nonlinear recurrence relation whose long-term output depends on a control parameter r. As r increases, the recurrence may converge to a single value, oscillate between several values, or enter high-variability regimes. This is a standard mathematical bifurcation phenomenon and does not represent instability, emergence, or internal processes of any system. The model visualizes how long-term outputs change as r is varied across a range.
+
+## 4. Mathematical Model
+x[t+1] = r * x[t] * (1 − x[t])
+
+Where:
+- x[t] is a scalar in the interval [0, 1]
+- r is the bifurcation parameter in [0, 4]
+
+Iterations are used to approximate long-term values for visualization.  
+High-variability regimes represent mathematical chaos only and must not be interpreted as cognitive unpredictability or internal model dynamics.
+
+## 5. Parameters (Sliders)
+
+| Parameter  | Meaning                               | Range | Default |
+|------------|----------------------------------------|--------|---------|
+| r          | bifurcation control parameter          | 0–4    | 2.5     |
+| initial_x  | initial scalar state of the recurrence | 0–1    | 0.5     |
+
+Slider values must be shown numerically.
+
+## 6. Visualization Plan
+A bifurcation-style plot:
+- X-axis: r values
+- Y-axis: long-term values of x for each r
+- A moving indicator highlights the current r and the trajectory generated from initial_x
+
+Iterations must be truncated to a safe fixed number for performance.  
+Visualization is purely numerical, with no metaphorical or interpretive meaning.
+
+## 7. What This Shows (Strictly External)
+- stability at certain r values
+- drift and oscillation under nonlinear recurrence
+- threshold-like transitions between regimes
+- unlabeled mathematical attractors
+- path dependence through sensitivity to initial_x
+
+## 8. What This Does Not Imply
+This model does not represent:
+- AI cognition, reasoning, emotion, or internal states
+- neural network behavior or training dynamics
+- psychological attractors or behavioral modes
+- real-world conversational or semantic processes
+- emergent cognitive unpredictability
+
+High-variability regimes are strictly mathematical and should not be interpreted beyond the recurrence rule.
+
+## 9. Limitations
+- scalar state only
+- logistic-map form fixed to one nonlinear family
+- no stochastic noise
+- behavior depends on iteration count used for long-term sampling
+- not predictive, diagnostic, or representative of internal model processes
+
+## 10. File Layout
+/src/models/model-toy13.ts  
+/src/visualizations/viz-toy13.ts  
+/src/components/Toy13.svelte
+
+These must be manually imported via App.svelte or the gallery.
+
+## 11. Svelte Component Requirements
+Each toy component must:
+1. Include a <section class="toy-description"> with this description.
+2. Display numeric slider values next to each slider.
+3. Use TypeScript for model logic.
+4. Import update logic only from /src/models/.
+5. Import visualization logic only from /src/visualizations/.
+6. Maintain strict separation between UI, computation, and visualization.
+7. Follow the structural style of earlier toys.
+
+## 12. References (Optional)
+References may include standard mathematical bifurcation or dynamical-systems texts only.  
+Do not reference ML, neural networks, psychology, or cognitive science.
 
 
 ------------------------------------------------------------
