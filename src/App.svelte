@@ -5,6 +5,7 @@
    * Includes the Stability vs Drift toy.
    */
   import Toy1 from "./components/Toy1.svelte";
+  import Toy2 from "./components/Toy2.svelte";
   import Gallery from "./components/Gallery.svelte";
 
   // selectedToy: null shows gallery; otherwise render the chosen toy
@@ -35,6 +36,11 @@
         <button on:click={backToGallery} class="back">Back</button>
       </div>
       <Toy1 />
+    {:else if selectedToy === "toy2"}
+      <div class="toy-header">
+        <button on:click={backToGallery} class="back">Back</button>
+      </div>
+      <Toy2 />
     {:else}
       <div class="toy-header">
         <button on:click={backToGallery} class="back">Back</button>

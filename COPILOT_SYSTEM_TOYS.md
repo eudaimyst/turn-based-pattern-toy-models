@@ -88,5 +88,28 @@ Unless instructed otherwise, provide:
 - no ellipses
 - syntactically valid, runnable code
 
+---
+
+## 8. Mandatory Build Verification
+For ANY modification that affects code (TypeScript, Svelte, D3, configs):
+
+After generating changes, Copilot MUST:
+1. Run a simulated build check:
+   - “Run: npm run build”
+   - Validate that the project compiles successfully under Vite + TypeScript
+2. If any errors appear:
+   - Analyze the error logs
+   - Regenerate corrected code
+   - Re-run the build check
+3. Repeat until:
+   - No TypeScript errors
+   - No Svelte compilation errors
+   - No import-path errors
+   - No missing modules
+   - No unused variable or syntax issues causing build failures
+
+Copilot must never stop with broken code.  
+If build correctness cannot be achieved, Copilot must state why and request clarification.
+
 This file defines your system behavior.  
 You must follow it exactly for all tasks in this repository.
