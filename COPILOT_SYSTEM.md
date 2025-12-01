@@ -12,7 +12,7 @@ Copilot may assist with:
 - bug identification and fixes
 - Svelte + Vite development support
 - TypeScript correctness improvements
-- D3 visualization refactoring (non-toy-specific)
+- D3 visualization refactoring
 - documentation editing (docs/*.md)
 - tooling adjustments inside Vite, package.json, or svelte.config.js
 - adding or modifying reusable components under /src/lib/*
