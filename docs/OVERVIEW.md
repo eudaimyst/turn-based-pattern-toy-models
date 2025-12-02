@@ -80,6 +80,7 @@ Additional files (e.g., `FAQ.md`, `AUDIENCE.md`, `METHOD.md`) provide contextual
 ---
 
 ## Repository Structure
+```
 /
 ├── docs/
 │   ├── overview.md
@@ -114,7 +115,7 @@ Additional files (e.g., `FAQ.md`, `AUDIENCE.md`, `METHOD.md`) provide contextual
 ├── package.json
 ├── vite.config.js
 └── svelte.config.js
-
+```
 The system is intentionally modular: **each toy’s logic and visualization are fully isolated**, making it easy for researchers to inspect or modify specific demonstrations.
 
 ---
@@ -129,6 +130,73 @@ The repository includes:
 - **COPILOT.md** outlining strict guardrails, constraints, and acceptable auto-generated contributions  
 
 No part of the repository uses neural models or external inference.
+
+---
+
+## Build & Run Instructions
+
+This repository uses **Node**, **Vite**, **Svelte**, and **D3**.  
+No global installs are required; everything is managed through `npm`.
+
+### 1. Prerequisites
+
+You will need:
+- Node (version 18+ recommended)
+- npm (comes with Node)
+
+To check:
+```
+node --version
+npm --version
+```
+
+### 2. Install Dependencies
+
+From the root of the repository:
+```
+npm install
+```
+This installs all Svelte, Vite, and visualization modules used by the project.
+
+### 3. Run the Development Server
+
+Start a local hot-reloading environment:
+```
+npm run dev
+```
+Vite will print a local address such as:
+http://localhost:5173
+Open that in a browser to explore the interactive toy models.
+
+### 4. Build for Production (optional)
+
+To generate the static build:
+```
+npm run build
+```
+This outputs the optimized production files to:
+/dist
+
+### 5. Preview the Production Build (optional)
+
+```
+npm run preview
+```
+This serves the built `/dist` directory on a local server so you can verify the final output.
+
+### 6. File Structure (short version)
+
+- `/src` --- Svelte components, mathematical models, D3 visualizations
+- `/docs` --- project overview, ethical guidelines, toy specifications
+- `/public` --- static assets
+- `/dist` --- generated only after running `npm run build`
+
+### 7. Notes
+
+- No proprietary services, APIs, or authentication are required.
+- The project runs entirely on local computation.
+- All toy models are implemented as **pure mathematical modules** under `/src/models`.
+- Visualizations are generated with D3 inside Svelte components.
 
 ---
 
