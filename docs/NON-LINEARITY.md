@@ -53,6 +53,42 @@ not claims about human mental states or AI cognition.
 
 ---
 
+# **Explicit Guardrails**
+
+This entire section must be paired with explicit statements:
+
+### **A.**
+
+These patterns *do not* represent human emotions or AI cognition.
+
+### **B.**
+
+They illustrate interaction-level phenomena only.
+
+### **C.**
+
+They are toy analogies, not mechanistic models.
+
+### **D.**
+
+They are guided by mathematical intuition, not psychological inference.
+
+### **E.**
+
+No claims are made about how GPT or any AI system works internally.
+
+### **F.**
+
+No claims are made about user mental states, personality, emotion, or cognition.
+
+### **G.**
+
+The non-linear behaviors exist to help users reason about conversational *patterns*,
+
+not human *minds* or machine *minds*.
+
+---
+
 # **Non-Linear Behaviors We Can Safely Borrow**
 
 Below is the full list of dynamical-systems behaviors that are academically standard, mathematically simple, ethically safe, and appropriate for illustrating interaction patterns.
@@ -79,17 +115,7 @@ Conversations also show diminishing returns — e.g., coherence can’t increase
 
 ## **2. Threshold Effects (Step Functions, Softmax-like curves)**
 
-**What it is:**
-
-Small differences near a tipping point result in large outcome changes.
-
-**Why it’s useful:**
-
-Tone shifts, misunderstandings, or ambiguous prompts can cause sudden mode changes in conversation.
-
-**Safe adaptation:**
-
-“System behavior flips after input crosses a critical value.”
+[-Removed by Human in the Loop, these were discovered through collaboration with the AI to NOT apply at the interaction level, and the related toy was removed.]
 
 ---
 
@@ -141,7 +167,9 @@ User messages vary in how strongly they shift model responses (and vice versa).
 
 ---
 
-## **6. Hysteresis (History-Dependence)**
+## **6. Hysteresis / Path dependence (History-Dependence)**
+
+-Human in the loop note: Hysteresis is not visualised in the toy models, only the path dependence component. (Purely because copilot did not generate it and I decided it was an unnecessary distraction for the visualisation.)
 
 **What it is:**
 
@@ -221,52 +249,6 @@ Shows why some conversations self-correct and others spiral.
 
 ---
 
-# **Explicit Guardrails**
-
-This entire section must be paired with explicit statements:
-
-### **A.**
-
-These patterns *do not* represent human emotions or AI cognition.
-
-### **B.**
-
-They illustrate interaction-level phenomena only.
-
-### **C.**
-
-They are toy analogies, not mechanistic models.
-
-### **D.**
-
-They are guided by mathematical intuition, not psychological inference.
-
-### **E.**
-
-No claims are made about how GPT or any AI system works internally.
-
-### **F.**
-
-No claims are made about user mental states, personality, emotion, or cognition.
-
-### **G.**
-
-The non-linear behaviors exist to help users reason about conversational *patterns*,
-
-not human *minds* or machine *minds*.
-
----
-
-# **Summary**
-
-We use non-linearity because conversations are messy, feedback-driven, and context-sensitive. Dynamical systems give us simple, well-established tools for illustrating those behaviors safely, without implying anything about internal mechanisms of either humans or models.
-
-These analogies are powerful without being misleading,
-
-informative without being diagnostic,
-
-playful without being pseudo-scientific.
-
 # Addendum:
 
 ## **Non-Linear Behaviors We Avoid**
@@ -316,6 +298,8 @@ Labeling attractors with conversational moods (“playful,” “serious,” etc
 This would be misleading and anthropomorphic.
 
 We instead use unlabeled, abstract attractor diagrams.
+
+[Human in the loop note: I decided to just use 1 attractor in the visualisation, to prevent misinterpretation regarding any suggestion of steering or pulling behaviour by participants.]
 
 ---
 
@@ -384,19 +368,11 @@ The non-linear patterns we *do* use are limited to those that safely illustrate 
 
 ## **Linear Behaviors We Avoid**
 
-Make a very short, very human-friendly explanation in the “methodology” or “for curious nerds” section:
+Linear models make it look like ‘more input = proportionally more effect.’
 
-> “Linear models make it look like ‘more input = proportionally more effect.’
-> 
-> 
-> Conversational patterns don’t work like that.
-> 
-> Feedback, thresholds, saturation, and drift mean we need non-linear behavior to illustrate the dynamics accurately — even in toy form.”
-> 
-
-## **(for your design doc draft, not necessarily public)**
-
-Here’s the list, written cleanly:
+Conversational patterns don’t work like that.
+ 
+Feedback, thresholds, saturation, and drift mean we need non-linear behavior to illustrate the dynamics accurately — even in toy form.
 
 ## **1. Pure Proportional Change (y = kx)**
 

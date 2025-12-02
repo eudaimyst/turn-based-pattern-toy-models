@@ -57,7 +57,7 @@ Time-series line chart implemented with D3 in `src/visualizations/viz-stability-
 ------------------------------------------------------------
 
 # Toy 2: Coupling Strength
-status: ready
+status: implemented
 
 ## 1. Name
 Coupling Strength
@@ -123,7 +123,7 @@ Only mathematical or dynamical systems references relevant to linear blending or
 ------------------------------------------------------------
 
 # Toy 3: Oscillation (Damped)
-status: ready
+status: implemented
 
 ## 1. Core Idea
 This toy illustrates how a two-variable discrete-time system behaves when one variable represents position-like state and the other represents a velocity-like update component. The mapping shows oscillatory or stabilizing trajectories depending on damping and stiffness. The purpose is to demonstrate how a signal can overshoot, oscillate, or converge toward a reference value based solely on linear dynamical parameters.
@@ -193,7 +193,7 @@ List only mathematical sources related to linear damped oscillators or discrete-
 ------------------------------------------------------------
 
 # Toy 4: Path Dependence
-status: ready
+status: implemented
 
 ## 1. Name
 Path Dependence
@@ -280,7 +280,7 @@ Do not reference machine learning, psychology, or cognitive science.
 ------------------------------------------------------------
 
 # Toy 5: Joint Context Vector Map
-status: ready
+status: implemented
 
 ## 1. Name
 Joint Context Vector Map
@@ -363,7 +363,7 @@ Do not reference machine learning, psychology, or neuroscience.
 ------------------------------------------------------------
 
 # Toy 6: Constraint Drift
-status: ready
+status: implemented
 
 ## 1. Name
 Constraint Drift
@@ -456,7 +456,7 @@ Do not reference machine learning, psychology, or cognitive science.
 ------------------------------------------------------------
 
 # Toy 7: Context Saturation
-status: ready
+status: implemented
 
 ## 1. Name
 Context Saturation
@@ -538,7 +538,7 @@ Do not reference machine learning, psychology, or neuroscience.
 ------------------------------------------------------------
 
 # Toy 8: Noise Sensitivity
-status: ready
+status: implemented
 
 ## 1. Name
 Noise Sensitivity
@@ -620,7 +620,7 @@ Do not reference machine learning, psychology, neuroscience, or cognitive scienc
 ------------------------------------------------------------
 
 # Toy 9: Impulse–Decay Response
-status: ready
+status: implemented
 
 ## 1. Name
 Impulse–Decay Response
@@ -708,7 +708,7 @@ Do not reference mutual information, machine learning, psychology, or neural com
 ------------------------------------------------------------
 
 # Toy 10: Attractor Landscape (Potential Wells)
-status: ready
+status: implemented
 
 ## 1. Name
 Attractor Landscape (Potential Wells)
@@ -801,7 +801,7 @@ Do not reference machine learning optimization, psychology, or cognitive science
 ------------------------------------------------------------
 
 # Toy 11: Framing Field (Vector Influence)
-status: draft
+status: implemented
 
 ## 1. Name
 Framing Field (Vector Influence)
@@ -888,7 +888,7 @@ Do not reference ML, psychology, cognitive science, or neural optimization.
 ------------------------------------------------------------
 
 # Toy 12: Impulse Response
-status: draft
+status: implemented
 
 ## 1. Name
 Impulse Response
@@ -980,7 +980,7 @@ Do not reference machine learning, psychology, neuroscience, or cognitive scienc
 ------------------------------------------------------------
 
 # Toy 13: Parameter-Bifurcation Explorer
-status: draft
+status: incomplete
 
 ## 1. Name
 Parameter-Bifurcation Explorer

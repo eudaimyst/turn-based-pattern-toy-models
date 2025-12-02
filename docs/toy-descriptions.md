@@ -1,6 +1,4 @@
 
------------------------------------------------------------------------------------------------------
-
 # Toy {Numer}: {Toy Name}
 *Short, neutral tagline summarizing the toy.*
 
@@ -83,7 +81,7 @@ This corresponds to **consistent steering** in an interaction --- such as the us
 Adds small random variation so the pattern doesn't look overly straight.
 This does *not* represent randomness in cognition or behavior --- it is included purely as a graphical aid to better see how stability and drift interact.
 
-# One practical intuition
+# One practical raccoon-style intuition
 Imagine talking to someone (or a model) where:
 
 -   If you stop pushing, the conversation naturally settles back into its usual tone → stability.
@@ -131,6 +129,12 @@ The toy shows **structure**, not psychology.
 
 Nothing in the line implies agency, preference, emotion, or hidden forces.
 
+# For academic readers
+
+This toy can be understood as a visualization of a linear recurrence with an additive drift term and small stochastic perturbation. The pattern is mathematically equivalent to a first-order autoregressive process with constant input (AR(1) with drift), widely used in time-series modeling, control theory, and communication research. Scholars may find it useful as a pedagogical example when illustrating stability conditions, convergence properties, or the effects of persistent steering in iterative processes.
+
+No additional conceptual claims or mappings are intended beyond the recurrence itself.
+
 -----------------------------------------------------------------------------------------------------
 
 # Toy 2: Coupling Strength
@@ -174,6 +178,13 @@ These fields inspire the structure of the toy but are not literal mechanisms of 
 - a numerical signal recurring across steps
 - weighted influence acting on that signal
 - surface-level pattern tendencies in turn-based processes
+
+# For academic readers
+
+This toy corresponds to a convex combination update rule, structurally similar to a weighted moving average or an AR(1) process with an exogenous constant. Academically, it can be connected to analyses of influence weighting, explicit vs. implicit feedback incorporation, and stepwise assimilation models in communication studies. It is particularly clean as an illustration of how recurrence coefficients shape long-term tendencies.
+
+No further claims are implied.
+
 
 # What this toy does *not* represent
 This toy does not represent:
@@ -247,6 +258,12 @@ This toy does not represent:
 - agentic steering or preferences
 - model “modes” or psychological states
 
+# For academic readers
+
+This toy is equivalent to a damped harmonic oscillator in discrete time. It can be framed within discussions of transient response, overshoot, and convergence in linear time-invariant (LTI) systems. For researchers, it highlights how oscillatory patterns can arise purely from the structure of an update rule without implying any oscillation in cognitive or emotional states.
+
+It may also be of interest as a demonstration of phase portraits in 2D linear recurrences.
+
 -----------------------------------------------------------------------------------------------------
 
 # Toy 4: Path Dependence
@@ -307,6 +324,12 @@ This toy does not represent:
 - agentic steering or preferences
 - model “modes” or psychological states
 
+# For academic readers
+
+Academically, this is a piecewise-linear recurrence demonstrating path dependence via asymmetric gains. It aligns with formal work on hysteresis, asymmetric step responses, and direction-dependent update rules. It can also serve as an accessible introduction to non-commutativity in iterative processes: the order of updates affects the trajectory even when the magnitudes of updates are the same.
+
+No additional meaning is implied.
+
 -----------------------------------------------------------------------------------------------------
 
 # Toy 5: Joint Context Vector Map
@@ -361,6 +384,12 @@ This toy does not represent:
 - sentiment or interpretation  
 - agentic steering or preferences  
 - model “modes” or psychological states  
+
+# For academic readers
+
+For academic use, this can be seen as a 2D vector recurrence with persistence (a contraction mapping combined with a constant vector input). It provides a simple visual example of vector drift, low-pass filtering in two dimensions, and cumulative directional bias. It may assist in illustrating how small, repeated vector influences aggregate spatially.
+
+No additional interpretive layer is intended.
 
 -----------------------------------------------------------------------------------------------------
 
@@ -418,6 +447,12 @@ This toy does not represent:
 - preferences, motives, or negotiation
 - psychological states or modes
 
+# For academic readers
+
+This toy corresponds to a geometric intersection-of-constraints visualization. Academically, it aligns with classical constraint satisfaction problems, feasibility region drift, and parametric motion of convex sets. It provides a clear illustration of how overlapping feasible regions evolve under translation, without invoking internal or psychological constructs.
+
+No further academic notes beyond that mapping.
+
 -----------------------------------------------------------------------------------------------------
 
 # Toy 7: Context Saturation
@@ -472,6 +507,12 @@ This toy does not represent:
 - memory, attention, or psychological saturation  
 - sentiment or interpretation  
 - preferences, motives, or goals  
+
+# For academic readers
+
+This is essentially a first-order low-pass filter with adjustable smoothing coefficient. Academics may recognize it as equivalent to exponential smoothing, a core operation in signal processing and time-series forecasting. It demonstrates variable responsiveness under weighted recurrence, illustrating how recency weighting shapes a sequence’s stepwise adjustments.
+
+No additional conceptual claims are made.
 
 -----------------------------------------------------------------------------------------------------
 
@@ -528,6 +569,11 @@ This toy does not represent:
 - preferences, motives, or goals  
 - psychological states or modes  
 
+# For academic readers
+
+This toy implements a discrete random walk with tunable noise amplitude (a simple additive white noise model). Academically, it corresponds to stochastic recurrence relations and Brownian-motion-like traces in bounded form. It can be used pedagogically to illustrate how noise accumulates in iterative processes and how variance grows with step count when no stabilizing term is present.
+
+No additional meaning should be inferred.
 
 -----------------------------------------------------------------------------------------------------
 
@@ -598,6 +644,11 @@ This toy does not represent:
 It shows structure, not psychology.  
 Nothing in the spike implies motive or experience—only the numerical rules you set.
 
+# For academic readers
+
+This toy models a classic impulse response of a stable first-order system. Academically, it is directly analogous to LTI system characterization where a Dirac delta (δ) input reveals the system’s transient behavior. It is useful for demonstrating decay kernels, exponential relaxation, and the distinction between system-level perturbation and internal reaction.
+
+No further academic notes beyond the LTI interpretation.
 
 
 -----------------------------------------------------------------------------------------------------
@@ -694,6 +745,12 @@ to illustrate motion on a surface, not mental or internal processes.
 The attractor lives in the graph, not in the participants.
 It does not represent anything beyond the geometry you see.
 
+# For academic readers
+
+Academically, this reflects gradient descent motion on a parametric potential surface (a scalar field). It provides a visual tool for demonstrating how local minima shape trajectories and how changes in depth or position affect convergence. Although inspired by mathematical attractor landscapes, the toy intentionally avoids any psychological or cognitive mapping.
+
+Researchers may find it useful for illustrating geometric reasoning about gradient fields without semantic overinterpretation.
+
 -----------------------------------------------------------------------------------------------------
 
 # Toy 11: Framing Field (Vector Influence)  
@@ -756,6 +813,11 @@ This toy does not represent:
 
 The point moves according to the arrows on the screen, not internal states of participants.
 
+# For academic readers
+
+This toy can be understood as a discrete-time integration of a vector field, similar to Euler integration in dynamical systems or flow visualization in computational geometry. It illustrates how orientation and magnitude of a field shape the trajectory through state space. It is relevant to academic discussions of flow lines, direction fields, and low-dimensional guidance structures.
+
+No further implications are intended.
 
 -----------------------------------------------------------------------------------------------------
 
@@ -816,10 +878,18 @@ This toy does not represent:
 
 It shows only the geometric shape produced when a sequence receives a brief external tap.
 
+# For academic readers
+
+Academically, this is the impulse response of a second-order linear recurrence with configurable gains. It supports discussion of damping ratios, oscillatory vs. non-oscillatory regimes, and stability conditions. It provides an accessible example of how small parameter changes alter transient behavior without invoking internal-state interpretations.
+
+No further additions needed.
+
 -----------------------------------------------------------------------------------------------------
 
 # Toy 13: Parameter–Bifurcation Explorer
 *A pattern showing how long-term behaviour can shift dramatically as a single control parameter varies.*
+
+⚠NOTE: This toy has not been fully implemented per the description, it simply shows the full bifurcation map with all points plotted.⚠
 
 This toy visualizes how the long-term outcomes of a simple nonlinear recurrence change when you adjust one parameter.
 As the control parameter r increases, the recurrence may settle to a stable value, enter periodic cycles, or transition into richly structured high-variability regimes.
@@ -883,6 +953,12 @@ This toy does not represent:
 - conversational “modes” or behavioural profiles  
 
 It visualizes mathematical branching properties, not mental or cognitive dynamics.
+
+# For academic readers
+
+This is a textbook bifurcation diagram of the logistic map, one of the canonical examples in chaos theory. For academic use, it can illustrate period-doubling cascades, Feigenbaum scaling, chaotic regimes, and sensitivity to parameter variation. Its inclusion serves solely as an example of how dramatically a simple recurrence can change with one parameter. No mapping to conversational or cognitive processes is implied.
+
+This is the only toy that displays chaotic behavior, chosen specifically because it is mathematically transparent and widely studied.
 
 
 -----------------------------------------------------------------------------------------------------

@@ -41,7 +41,7 @@ They’re simple dynamical systems.
 
 No.
 
-Feedback coupling (Toy 4) illustrates how two abstract signals can influence each other mathematically.
+They may illustrate how two abstract signals can influence each other mathematically.
 
 It does **not** imply emotional reciprocity, mutual understanding, or any psychological state in either direction.
 

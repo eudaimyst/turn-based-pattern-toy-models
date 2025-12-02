@@ -1,3 +1,4 @@
+[Human in the loop: This is an example of I think the third iteration of exploring the mathematical models provided by the AI. This provides relevant fields and why it applies.]
 # **Scientific Background**
 
 ## *(Fields of study that support each interaction-shape model)*

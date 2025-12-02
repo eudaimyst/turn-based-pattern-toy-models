@@ -1,6 +1,4 @@
-# **THE SECOND FUNDAMENTALS**
-
-‼ These fundamentals refer to the fundamental mathematics underpinning the project. **They are not fundamental** in any other context. ‼
+# **MODELS**
 
 Six Abstract, Safety-Compliant Models of Interaction Dynamics
 
