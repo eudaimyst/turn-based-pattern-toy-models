@@ -1,4 +1,4 @@
-[Human in the loop: Here I asked for a more grounded, interperated, how each pattern "feels" in the conversational space. I make no normative claims. It's just an example of one perspective from which I approached the topic.]
+[Human in the loop: Here I asked for a more interperative definition, "how each pattern *feels* in the conversational space." I make no normative claims. It's just an example of one perspective from which I approached the topic.]
 # 🌊 1. **Dynamics Model**
 
 ### *Pattern feeling: “Ah, this follows from that.”*

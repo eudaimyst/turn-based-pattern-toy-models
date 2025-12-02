@@ -1,6 +1,6 @@
-# **Title: Human-AI Interaction Dynamics Explorer**
-(aka where is the "magic"?)
+[Human in the loop: Here is an example of the earliest readme file once the respository was initiated. It provides an example of how scope, safety, ethics, were considered before any work began. All copilot instructions / LLM contexts were directed to this/similar documents]
 
+# **Title: Human-AI Interaction Dynamics Explorer**
 *A set of interactive toy models for visualizing human–AI interaction patterns.*
 
 ---

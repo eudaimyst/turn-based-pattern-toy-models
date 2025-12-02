@@ -292,80 +292,227 @@
   });
 </script>
 
-<section>
-  <h2>Parameter-Bifurcation Explorer</h2>
-  <section class="toy-description">
-    <p>
-      This toy illustrates how a scalar nonlinear recurrence changes its
-      long-term behavior as a control parameter varies. The logistic map x[t+1]
-      = r * x[t] * (1 - x[t]) is sampled across r in [0,4], and the long-term
-      values are plotted to show fixed points, cycles, and high-variability
-      regimes. These are numerical phenomena only and do not represent any
-      internal or cognitive processes.
-    </p>
-  </section>
+<h3>Toy 13: Parameter–Bifurcation Explorer</h3>
 
-  <div class="controls">
-    <div>
-      <label>
-        r: {r.toFixed(3)}
-        <input type="range" min="2.8" max="4" step="0.0001" bind:value={r} />
-      </label>
-    </div>
+<section class="toy-description">
+  <p>
+    <strong
+      >⚠ NOTE: This toy has not been fully implemented per the description, it
+      simply shows the full bifurcation map with all points plotted. ⚠</strong
+    >
+  </p>
 
-    <div>
-      <label>
-        initial_x: {initial_x.toFixed(3)}
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.001"
-          bind:value={initial_x}
-        />
-      </label>
-    </div>
+  <p>
+    This toy visualizes how the long-term outcomes of a simple nonlinear
+    recurrence change when you adjust one parameter.<br />
+    As the control parameter r increases, the recurrence may settle to a stable value,
+    enter periodic cycles, or transition into richly structured high-variability
+    regimes.<br />
+    These branching structures are numerical outcomes only and do not represent thoughts,
+    feelings, cognition, or internal states of any participant.
+  </p>
 
-    <div>
-      <button
-        on:click={async () => {
-          // Run heavy computation off the main interactive path when possible
-          // full recompute with high resolution in worker
-          await scheduleComputeBifViaWorker();
-          if (viz && viz.render && bifBuffer)
-            viz.render(bifBuffer, r, currentTrajectory);
-        }}
-        disabled={loading}
-      >
-        {#if loading}
-          Recomputing...
-        {:else}
-          Recompute Bifurcation
-        {/if}
-      </button>
-    </div>
-  </div>
-
-  <div
-    bind:this={container}
-    class="visualization"
-    style="margin-top:12px"
-  ></div>
+  <p>
+    The diagram illustrates a general property of iterative processes: small
+    changes in a parameter can lead to large differences in long-term patterns.<br
+    />
+    This is a mathematical demonstration, not a model of conversation, psychology,
+    or AI behaviour.
+  </p>
 </section>
 
+<div class="visualization" bind:this={container}></div>
+
+<div class="controls">
+  <div>
+    <label>
+      r — control parameter
+      <input type="range" min="2.8" max="4" step="0.0001" bind:value={r} />
+      <span class="val">{r.toFixed(3)}</span>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      initial_x — starting value
+      <input type="range" min="0" max="1" step="0.001" bind:value={initial_x} />
+      <span class="val">{initial_x.toFixed(3)}</span>
+    </label>
+  </div>
+
+  <div>
+    <button
+      on:click={async () => {
+        // Run heavy computation off the main interactive path when possible
+        // full recompute with high resolution in worker
+        await scheduleComputeBifViaWorker();
+        if (viz && viz.render && bifBuffer)
+          viz.render(bifBuffer, r, currentTrajectory);
+      }}
+      disabled={loading}
+    >
+      {#if loading}
+        Recomputing...
+      {:else}
+        Recompute Bifurcation
+      {/if}
+    </button>
+  </div>
+</div>
+
+<details open>
+  <summary>What this toy does <em>not</em> represent</summary>
+  <p>
+    Humans often notice that turn-based exchanges can diverge into different
+    paths over time.<br />
+    This toy does not model that behaviour, but its branching appearance may feel
+    intuitively familiar.
+  </p>
+
+  <p>This toy does not represent:</p>
+  <ul>
+    <li>thoughts</li>
+    <li>feelings</li>
+    <li>intentions</li>
+    <li>personality</li>
+    <li>preferences</li>
+    <li>cognition</li>
+    <li>psychological states</li>
+    <li>internal human or AI processes</li>
+    <li>meaning, sentiment, or interpretation</li>
+    <li>conversational "modes" or behavioural profiles</li>
+  </ul>
+
+  <p>
+    It visualizes mathematical branching properties, not mental or cognitive
+    dynamics.
+  </p>
+</details>
+
+<details>
+  <summary>What this toy represents</summary>
+  <ul>
+    <li>how long-term numerical patterns vary with a single parameter</li>
+    <li>transitions between stable, periodic, and chaotic regimes</li>
+    <li>branching behaviour in nonlinear recurrence rules</li>
+    <li>surface-level mathematical structure only</li>
+  </ul>
+</details>
+
+<details>
+  <summary>For academic readers</summary>
+  <p>
+    This is a textbook bifurcation diagram of the logistic map, one of the
+    canonical examples in chaos theory. For academic use, it can illustrate
+    period-doubling cascades, Feigenbaum scaling, chaotic regimes, and
+    sensitivity to parameter variation. Its inclusion serves solely as an
+    example of how dramatically a simple recurrence can change with one
+    parameter. No mapping to conversational or cognitive processes is implied.
+  </p>
+  <p>
+    This is the only toy that displays chaotic behavior, chosen specifically
+    because it is mathematically transparent and widely studied.
+  </p>
+</details>
+
+<details>
+  <summary>Sliders</summary>
+
+  <h4>r — control parameter</h4>
+  <p>
+    Adjusts the governing parameter of the nonlinear recurrence.<br />
+    Lower values produce stable convergence; higher values produce period-doubling
+    cycles; beyond certain thresholds, the behaviour becomes chaotic.
+  </p>
+
+  <h4>initial_x — starting value</h4>
+  <p>
+    Sets the initial point used when computing the sample orbit for the
+    highlighted r value.<br />
+    This allows inspection of how long-term behaviour depends on initial conditions.
+  </p>
+
+  <p>
+    Press <strong>Recompute Bifurcation</strong> to regenerate the full diagram.
+  </p>
+</details>
+
+<details>
+  <summary>Fields this dynamic draws from</summary>
+  <ul>
+    <li>nonlinear dynamics</li>
+    <li>chaos theory</li>
+    <li>bifurcation analysis</li>
+    <li>iterative recurrence modelling</li>
+    <li>classical logistic-map behaviour</li>
+  </ul>
+  <p>
+    These domains inspire the visualization and structure; they are not
+    mechanisms of human or AI behaviour.
+  </p>
+</details>
+
 <style>
+  .toy-description {
+    background: #f8fafc;
+    padding: 12px;
+    border-left: 3px solid #cbd5e1;
+    margin: 12px 0;
+    line-height: 1.6;
+  }
+
+  .visualization {
+    margin: 12px 0;
+  }
+
   .controls > div {
     margin: 6px 0;
   }
+
   .controls label {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.9rem;
     margin-bottom: 4px;
   }
-  .toy-description {
-    background: #f8fafc;
+
+  .val {
+    display: inline-block;
+    min-width: 3rem;
+    text-align: right;
+  }
+
+  details {
+    margin: 12px 0;
     padding: 8px;
-    border-left: 3px solid #e6eef6;
-    margin-bottom: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 4px 0;
+    user-select: none;
+  }
+
+  summary:hover {
+    color: #3b82f6;
+  }
+
+  details p,
+  details ul {
+    margin: 8px 0;
+    padding-left: 8px;
+  }
+
+  details ul {
+    list-style-position: inside;
+  }
+
+  details h4 {
+    margin: 12px 0 4px 0;
+    font-size: 0.95rem;
   }
 </style>

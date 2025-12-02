@@ -33,9 +33,9 @@
 
 <main>
   <header>
-    <h1>haii-dynamics — Toy gallery</h1>
+    <h1>Interactive Toys</h1>
     <p style="margin:0">
-      Interactive toy models demonstrating abstract interaction dynamics.
+      Interactive toy models demonstrating patterns in turn-based processes.
     </p>
   </header>
 

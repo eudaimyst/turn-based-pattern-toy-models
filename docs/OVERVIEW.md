@@ -1,118 +1,83 @@
-# Project Overview
+# **Human–AI Interaction Dynamics Explorer**  
+*A collection of mathematical toy models for visualizing surface-level patterns in text-based human–AI exchanges.*
 
-## Purpose
-This project provides a suite of interactive toy models that visualize simplified interaction dynamics in human–AI text exchanges.  
-The goal is to illustrate observable patterns such as stability, drift, thresholds (non-NN), saturation, coupling, noise sensitivity, and related phenomena.
+---
 
-These are mathematical abstractions, not psychological or cognitive models.
+## **Overview**
 
-## Scope
+This repository presents a set of **interactive toy models** that visualize structural patterns which can appear in turn-based interactions — including stability, drift, saturation, noise sensitivity, vector influences, and nonlinear responses.
 
-### In-Scope
-- Mathematical recurrence relations
-- Simple non-linear constructs not associated with neural networks
-- Noise-driven variability
-- Threshold behaviors implemented without sigmoids or NN activations
-- Potential-field attractors
-- Damped oscillators
-- Vector-field framing influences
-- Joint context effects treated as abstract state variables
+Each model is a **purely mathematical construct**, implemented as a small, self-contained recurrence or geometric rule.  
+They are intended as **conceptual lenses** for exploring how simple update mechanisms shape external patterns over time.
 
-### Out-of-Scope
-- Neural network internals (activation functions, attention, embeddings)
-- Psychological inference
-- Emotion, identity, intentionality, agency
-- Memory or internal state modeling
-- AI interpretability or mechanistic claims
-- Alignment, bias, safety modeling
-- Sociopolitical system simulations
+These models:
 
-## Global Guardrails
-All models must follow:
+- **do not** represent AI cognition, thought, intention, preference, or internal state  
+- **do not** represent human psychology, emotion, perception, or behavior  
+- **do not** simulate neural networks, activations, embeddings, or transformer mechanisms  
+- **do not** model social, political, or interpersonal systems  
+- **do not** infer meaning, semantics, or mental processes  
 
-1. No implication of AI cognition or internal state.
-2. No anthropomorphism.
-3. No psychological framing.
-4. No neural network math or functions (ReLU, sigmoid, tanh, softmax, GELU).
-5. No mechanisms associated with cognitive science or affective modeling.
-6. Clear limitations sections for each toy model.
-7. Visualization choices must not suggest mind-like processes.
-8. All variables represent abstract scalars only.
+Instead, they illustrate **patterns that can emerge at the level of interaction itself** — i.e., *the external shape of the input/output sequence*, independent of what either participant is doing internally.
 
-## Canonical Definitions
+The project’s scope is strictly limited to **mathematical visualization and conceptual clarification**.
 
-**Interaction Dynamics**  
-Observable input → output patterns from sequential text exchanges.
+---
 
-**Joint Context**  
-Shared text history considered as an abstract variable.
+## **Intended Audience**
 
-**Coupled Behavior**  
-Two state variables influencing each other via simple update rules.
+This project is designed for:
 
-**State Influence**  
-Effect of one step’s input on the next state.
+- **Human–AI interaction researchers**  
+- **Interaction design scholars**  
+- **HCI educators**  
+- **Dynamics / control theory / nonlinear systems instructors**  
+- **Anyone studying structural patterns in iterative processes**  
 
-**Interpretive Framing**  
-User-side interpretive effect acknowledged but not modeled.
+It is *not* a modeling toolkit, diagnostic tool, or analytical instrument.  
+It is a **didactic artifact**: a set of demonstrations that can help frame discussions about how patterns in turn-based interaction might be visualized **without importing psychological or mechanistic claims**.
 
-**Toy Model**  
-A simplified mathematical construct illustrating an interaction pattern.
+---
 
-## Toy Models Included
+## **What These Toys Are**
 
-1. Stability vs Drift
-2. Coupling Strength
-3. Oscillation (Damped)
-4. Path Dependence
-5. Joint Context Vector Map
-6. Constraint Drift
-7. Context Saturation
-8. Noise Sensitivity
-9. Mutual Information Pulse Response
-10. Attractor Landscape
-11. Framing Field
-12. Impulse Response
-13. Bifurcation Explorer
+Each toy is:
 
-Each toy model includes:
-- equation
-- slider definitions
-- visualization plan
-- behavior description
-- non-implication list
-- limitations
+- a simple recurrence relation, geometric rule, or discrete update  
+- visualized in real time using D3  
+- controlled by sliders so users can observe how structure changes under parametric variation  
+- strictly bounded to external, observable mathematical patterns  
 
-## Allowed Non-Linearity
-- Linear damping  
-- Polynomial expressions  
-- Piecewise thresholds (non-sigmoid)  
-- Basic recurrence relations  
-- Random noise  
-- Potential-field wells  
-- Damped oscillators  
+The models are intentionally low-dimensional and interpretable.  
+They function similarly to classical didactic examples in:
 
-## Forbidden Non-Linearity
-- Sigmoid or NN-adjacent functions  
-- ReLU, GELU, tanh, softmax  
-- Chaos systems suggesting internal complexity  
-- Bifurcation cascades  
-- Hopfield-like attractors  
-- Emotion-like curves  
-- Cognitive-process analogs
+- control theory  
+- dynamical systems  
+- information flow in iterative processes  
+- vector-field visualization  
+- stochastic perturbation models  
+- nonlinear map behavior  
 
-The mathematical behavior must be interpretable purely as an external abstraction.
+No toy makes assumptions or statements about cognitive, computational, psychological, or semantic content.
 
-## Audience
-- Developers exploring interaction visualization
-- Individuals studying simple dynamical systems in conversational settings
-- Educators teaching feedback and stability concepts
+---
 
-Not intended for:
-- psychological assessment  
-- AI alignment research  
-- neural network mechanistic study  
-- social modeling  
+## **Documentation Structure**
+
+All project documentation is located in the **`/docs`** directory.  
+Key files include:
+
+- **`OVERVIEW.md`** — High-level conceptual framing and scope.  
+- **`ETHICS.md`** — Safety boundaries, non-claims, usage constraints.  
+- **`TOYMODELS.md`** — Mathematical models used as a foundation for the toys.  
+- **`NON-LINEARITY.md`** — Notes on where and why nonlinearities are used.  
+- **`DEVELOPMENT-GUIDELINES.md`** — Architecture, constraints, and guardrails for extending the toys.  
+- **`toy-template.md`** — Standardized specification for defining additional toys.  
+- **`toy-specs.md` / `toy-descriptions.md`** — Complete listings of all toys and their description blocks.
+
+Additional files (e.g., `FAQ.md`, `AUDIENCE.md`, `METHOD.md`) provide contextual framing and safety clarifications.
+
+---
 
 ## Repository Structure
 /
@@ -150,5 +115,67 @@ Not intended for:
 ├── vite.config.js
 └── svelte.config.js
 
-The project uses Svelte with Vite as the build system. It does not use SvelteKit.
-Routing and navigation must be implemented manually using standard Svelte component composition.
+The system is intentionally modular: **each toy’s logic and visualization are fully isolated**, making it easy for researchers to inspect or modify specific demonstrations.
+
+---
+
+## **Development Tools**
+
+The repository includes:
+
+- **Svelte + Vite** for UI and app structure  
+- **D3.js** for rendering  
+- **TypeScript** for models  
+- **COPILOT.md** outlining strict guardrails, constraints, and acceptable auto-generated contributions  
+
+No part of the repository uses neural models or external inference.
+
+---
+
+## **Academic Context**
+
+These toys may be useful for:
+
+- illustrating surface-level interaction structure  
+- clarifying misconceptions about patterns in human–AI exchange  
+- teaching concepts in dynamical systems using intuitive examples  
+- prompting discussion about how low-dimensional models differ from cognitive or computational mechanisms  
+- demonstrating the distinction between **observable patterns** and **internal states**  
+
+They are **not** intended as empirically predictive or diagnostically meaningful.
+
+---
+
+## **Scope and Non-Scope**
+
+**In scope:**
+
+- conceptual visualization  
+- mathematical didactics  
+- safe framing of interaction dynamics  
+- interpretive scaffolding  
+
+**Out of scope:**
+
+- modeling human thought  
+- modeling AI internal mechanisms  
+- behavioral prediction  
+- psychological interpretation  
+- cognitive architectures  
+- mental states, emotions, preferences, modes, etc.
+
+---
+
+## **License & Use**
+
+This repository is offered for **research, education, and conceptual exploration**.  
+All interpretations must remain strictly within the mathematical scope of the models.
+
+If you reference or share this repository, please retain the ethical and clarity framing to avoid misinterpretation.
+
+---
+
+## **Contact / Collaboration**
+
+If you are an academic researcher interested in examining or discussing the project, you are welcome to explore the docs or reach out with questions.  
+The project is intentionally open-ended, modular, and transparent so that inspection is straightforward and assumptions remain explicit.

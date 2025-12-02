@@ -57,62 +57,176 @@
   }
 </script>
 
-<div class="toy">
-  <header>
-    <h3>Noise Sensitivity</h3>
-    <section class="toy-description">
-      <p>
-        This toy models the scalar recurrence <code
-          >x[t+1] = x[t] + d + n * r[t]</code
-        >
-        where <strong>d</strong> is a constant baseline drift and
-        <strong>n</strong> is the noise amplitude multiplying a uniform sample r[t]
-        ∈ [−1, 1]. Adjust the sliders to observe how noise amplitude affects trajectory
-        variability.
-      </p>
-    </section>
+<h3>Toy 8: Noise Sensitivity</h3>
 
-    <div class="controls">
-      <label>
-        noise_level (n)
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          bind:value={params.noise_level}
-        />
-        <span class="val">{params.noise_level.toFixed(2)}</span>
-      </label>
+<section class="toy-description">
+  <p>
+    This toy updates a scalar value each turn by adding a random numerical
+    perturbation.<br />
+    These values do not represent thoughts, feelings, intentions, or internal states.
+  </p>
 
-      <label>
-        baseline_drift (d)
-        <input
-          type="range"
-          min="-1"
-          max="1"
-          step="0.01"
-          bind:value={params.baseline_drift}
-        />
-        <span class="val">{params.baseline_drift.toFixed(2)}</span>
-      </label>
+  <p>
+    The pattern illustrates how simple iterative processes behave when small
+    variations appear at each step.<br />
+    As noise increases, the trajectory becomes more erratic; as noise decreases,
+    the path becomes smoother.
+  </p>
 
-      <button on:click={toggleRunning}>{running ? "Pause" : "Run"}</button>
-      <button on:click={reset}>Reset</button>
-    </div>
-  </header>
+  <p>
+    The toy demonstrates variability driven solely by randomness, without
+    implying any deeper meaning.
+  </p>
+</section>
 
-  <div bind:this={container} style="width:100%;height:220px"></div>
+<div class="visualization" bind:this={container}></div>
+
+<div class="controls">
+  <label>
+    noise_level — randomness amplitude
+    <input
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      bind:value={params.noise_level}
+    />
+    <span class="val">{params.noise_level.toFixed(2)}</span>
+  </label>
+
+  <button on:click={toggleRunning}>{running ? "Pause" : "Run"}</button>
+  <button on:click={reset}>Reset</button>
 </div>
 
+<details open>
+  <summary>What this toy does <em>not</em> represent</summary>
+  <p>This toy does not represent:</p>
+  <ul>
+    <li>thoughts</li>
+    <li>feelings</li>
+    <li>intentions</li>
+    <li>personality</li>
+    <li>cognition</li>
+    <li>internal human or AI processes</li>
+    <li>emotional instability or fluctuation</li>
+    <li>sentiment or interpretation</li>
+    <li>preferences, motives, or goals</li>
+    <li>psychological states or modes</li>
+  </ul>
+</details>
+
+<details>
+  <summary>What this toy represents</summary>
+  <ul>
+    <li>a scalar updated with random perturbations</li>
+    <li>how noise amplitude affects variability in an iterative trace</li>
+    <li>surface-level unpredictability in turn-based processes</li>
+    <li>a visual illustration of accumulated randomness</li>
+  </ul>
+</details>
+
+<details>
+  <summary>For academic readers</summary>
+  <p>
+    This toy implements a discrete random walk with tunable noise amplitude (a
+    simple additive white noise model). Academically, it corresponds to
+    stochastic recurrence relations and Brownian-motion-like traces in bounded
+    form. It can be used pedagogically to illustrate how noise accumulates in
+    iterative processes and how variance grows with step count when no
+    stabilizing term is present.
+  </p>
+  <p>No additional meaning should be inferred.</p>
+</details>
+
+<details>
+  <summary>Sliders</summary>
+
+  <h4>noise_level — randomness amplitude</h4>
+  <p>
+    Controls the strength of the random perturbation applied each step.<br />
+    Higher noise_level: sharper, more chaotic movement.<br />
+    Lower noise_level: smoother, more stable movement.
+  </p>
+</details>
+
+<details>
+  <summary>Fields this dynamic draws from</summary>
+  <ul>
+    <li>stochastic processes (additive noise, random walks)</li>
+    <li>signal processing (perturbation, jitter)</li>
+    <li>control theory (response under perturbation)</li>
+    <li>time-series modeling (random fluctuations across steps)</li>
+    <li>iterative update processes (noise accumulation)</li>
+  </ul>
+  <p>These are conceptual inspirations, not literal mechanisms.</p>
+</details>
+
 <style>
+  .toy-description {
+    background: #f8fafc;
+    padding: 12px;
+    border-left: 3px solid #cbd5e1;
+    margin: 12px 0;
+    line-height: 1.6;
+  }
+
+  .visualization {
+    width: 100%;
+    height: 220px;
+    margin: 12px 0;
+  }
+
   .controls {
     display: flex;
     gap: 0.5rem;
     align-items: center;
     flex-wrap: wrap;
+    margin: 12px 0;
   }
+
   label {
     font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .val {
+    display: inline-block;
+    min-width: 3rem;
+    text-align: right;
+  }
+
+  details {
+    margin: 12px 0;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 4px 0;
+    user-select: none;
+  }
+
+  summary:hover {
+    color: #3b82f6;
+  }
+
+  details p,
+  details ul {
+    margin: 8px 0;
+    padding-left: 8px;
+  }
+
+  details ul {
+    list-style-position: inside;
+  }
+
+  details h4 {
+    margin: 12px 0 4px 0;
+    font-size: 0.95rem;
   }
 </style>

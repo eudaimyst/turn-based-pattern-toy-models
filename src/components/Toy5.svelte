@@ -19,12 +19,11 @@
     resize: (w: number, h: number) => void;
   } | null = null;
 
-  // user-controlled input vector components
   let input_x = 0;
   let input_y = 0;
 
   let running = true;
-  const stepInterval = 100; // ms per step
+  const stepInterval = 100;
 
   function step() {
     state = update(state, params as Params, { x: input_x, y: input_y });
@@ -62,50 +61,128 @@
 </script>
 
 <div class="toy">
-  <header>
-    <h3>Joint Context Vector Map</h3>
-    <section class="toy-description">
-      <p>
-        This toy models a 2D state vector evolving under the linear update rule <code
-          >x[t+1] = s * x[t] + u</code
-        >, where <code>s</code> is a scalar multiplier and <code>u</code> is an
-        external 2D input vector. Adjust <strong>input_x</strong>,
-        <strong>input_y</strong>, and
-        <strong>state_scale</strong> to observe trajectories in the plane.
-      </p>
-    </section>
+  <h3>Toy 5: Joint Context Vector Map</h3>
 
-    <div class="controls">
-      <label>
-        input_x
-        <input type="range" min="-1" max="1" step="0.01" bind:value={input_x} />
-        <span class="val">{input_x.toFixed(2)}</span>
-      </label>
+  <section class="toy-description">
+    <p>
+      <em
+        >A pattern showing how repeated directional nudges create a drifting
+        path across a shared 2D space.</em
+      >
+    </p>
+    <p>
+      This toy shows how a 2D numerical state updates each turn by combining a
+      scalar persistence factor with a constant 2D input vector. These values do
+      not represent thoughts, feelings, intentions, or internal states. The
+      pattern captures a surface-level effect found in many turn-based
+      processes: each step carries forward part of the previous joint-context
+      while also receiving a new directional push. Together, these operations
+      produce a visible drifting path in the plane.
+    </p>
+  </section>
 
-      <label>
-        input_y
-        <input type="range" min="-1" max="1" step="0.01" bind:value={input_y} />
-        <span class="val">{input_y.toFixed(2)}</span>
-      </label>
+  <div class="visualization" bind:this={container}></div>
 
-      <label>
-        state_scale
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          bind:value={params.state_scale}
-        />
-        <span class="val">{params.state_scale.toFixed(2)}</span>
-      </label>
+  <div class="controls">
+    <label>
+      input_x
+      <input type="range" min="-1" max="1" step="0.01" bind:value={input_x} />
+      <span class="val">{input_x.toFixed(2)}</span>
+    </label>
 
-      <button on:click={toggleRunning}>{running ? "Pause" : "Run"}</button>
-      <button on:click={reset}>Reset</button>
-    </div>
-  </header>
+    <label>
+      input_y
+      <input type="range" min="-1" max="1" step="0.01" bind:value={input_y} />
+      <span class="val">{input_y.toFixed(2)}</span>
+    </label>
 
-  <div bind:this={container} style="width:100%;height:420px"></div>
+    <label>
+      state_scale
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        bind:value={params.state_scale}
+      />
+      <span class="val">{params.state_scale.toFixed(2)}</span>
+    </label>
+
+    <button on:click={toggleRunning}>{running ? "Pause" : "Run"}</button>
+    <button on:click={reset}>Reset</button>
+  </div>
+
+  <details open>
+    <summary>What this toy does <em>not</em> represent</summary>
+    <p>This toy does not represent:</p>
+    <ul>
+      <li>thoughts</li>
+      <li>feelings</li>
+      <li>intentions</li>
+      <li>personality</li>
+      <li>cognition</li>
+      <li>internal human or AI processes</li>
+      <li>sentiment or interpretation</li>
+      <li>agentic steering or preferences</li>
+      <li>model "modes" or psychological states</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>What this toy represents</summary>
+    <ul>
+      <li>a 2D numerical signal shifted by repeated directional nudges</li>
+      <li>how previous joint-context persists or fades each step</li>
+      <li>surface-level drift patterns in iterative, turn-based processes</li>
+      <li>the cumulative effect of simple linear operations</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>For academic readers</summary>
+    <p>
+      For academic use, this can be seen as a 2D vector recurrence with
+      persistence (a contraction mapping combined with a constant vector input).
+      It provides a simple visual example of vector drift, low-pass filtering in
+      two dimensions, and cumulative directional bias. It may assist in
+      illustrating how small, repeated vector influences aggregate spatially.
+    </p>
+    <p>No additional interpretive layer is intended.</p>
+  </details>
+
+  <details>
+    <summary>Sliders</summary>
+    <h4>input_x — horizontal nudge</h4>
+    <p>
+      Sets how strongly the state is shifted left or right each turn. This
+      shapes the horizontal component of the directional influence.
+    </p>
+    <h4>input_y — vertical nudge</h4>
+    <p>
+      Sets how strongly the state is shifted upward or downward. Together with
+      input_x, it defines the 2D input vector applied each step.
+    </p>
+    <h4>state_scale — joint-context persistence</h4>
+    <p>
+      Controls how much of the previous joint-context remains after each update.<br
+      />
+      Higher values: smoother drift influenced by past steps.<br />
+      Lower values: past joint-context fades quickly, producing sharper, more reactive
+      movements.
+    </p>
+  </details>
+
+  <details>
+    <summary>Fields this dynamic draws from</summary>
+    <ul>
+      <li>control theory (linear updates, persistence factors)</li>
+      <li>dynamical systems (vector recurrence relations)</li>
+      <li>vector geometry (incremental movement in a plane)</li>
+      <li>interaction design (stepwise directional influence)</li>
+      <li>iterative process modeling (accumulated adjustments over turns)</li>
+    </ul>
+    <p>These are conceptual inspirations, not literal mechanisms.</p>
+  </details>
 </div>
 
 <style>
@@ -114,8 +191,28 @@
     gap: 0.5rem;
     align-items: center;
     flex-wrap: wrap;
+    margin: 1rem 0;
   }
   label {
     font-size: 0.85rem;
+  }
+  .visualization {
+    width: 100%;
+    height: 420px;
+    margin: 1rem 0;
+  }
+  details {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+  }
+  details[open] summary {
+    margin-bottom: 0.5rem;
   }
 </style>
