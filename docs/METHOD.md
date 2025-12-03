@@ -15,9 +15,6 @@ The method reflects how a human and AI can co-develop *educational, safely frame
 
 The human contributor found the idea compelling and pursued it further, but **all subsequent direction, selection, approval, and scope decisions were human-led**.
 
-[Human in the loop: Here I am inserting output *from the originating context* when asked how the concept originated for the purpose of this document. In order to provide clarity that this is not AI conceptualised:
- ]
-
 ---
 
 ## 2. Human Steering and Boundary Setting  

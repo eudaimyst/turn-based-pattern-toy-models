@@ -1,4 +1,4 @@
-## 🛡️ Ethical Statement**
+## 🛡️ **Ethical Statement**
 
 This project is designed to promote understanding of conversational dynamics without making claims about the internal states of humans or AI systems. The models are strictly illustrative, not diagnostic or predictive. They do not represent cognition, emotion, agency, or consciousness in artificial systems, nor do they infer psychological states in users.
 
