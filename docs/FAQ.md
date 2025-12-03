@@ -1,4 +1,29 @@
-### **Q1. Are these toys describing how GPT actually works inside?**
+### Q. **Why are there so many disclaimers?**
+
+Because the topic of human–AI interaction is very easy to misinterpret.
+Many everyday English terms — such as “attractor,” “drift,” or “spiral” — have both mathematical and psychological meanings.
+Without clear boundaries, people could mistakenly assume these visualizations imply something about internal states of either humans or AI systems.
+
+The disclaimers are simply there to prevent that confusion. They reflect good practice: separating mathematical patterns from any interpretation of cognition, emotion, or intention. 
+
+The project is intentionally conservative in wording because it is far safer to be explicit than to let a reader infer something the project is not designed to claim.
+
+---
+
+### Q. **Why are these framed as “toys” if they seem carefully constructed?**
+
+A. Because that is exactly what they are meant to be: small, transparent, self-contained visual models that help illustrate patterns without making claims about what they represent.
+Calling them “toys” is the clearest way to signal that they are exploratory, not diagnostic or predictive.
+
+The models are harmless mathematically, but interpretations can become confusing if someone assumes they correspond to psychological or internal mechanisms.
+Framing them as toys helps prevent overreading while keeping the focus on conceptual exploration.
+
+They were personally useful for me as scaffolding to understand why certain interaction patterns can *feel* meaningful, without attributing that to agency or sentience.
+That personal value does not make them “important” in a scientific sense—they remain demonstrations, not theories.
+
+---
+
+### **Q. Are these toys describing how GPT actually works inside?**
 
 **No.**
 
@@ -8,7 +33,7 @@ They only illustrate **interaction patterns** — the shape of back-and-forth ex
 
 ---
 
-### **Q2. Do these models say anything about my personality or emotions?**
+### **Q. Do these models say anything about my personality or emotions?**
 
 **No.**
 
@@ -20,7 +45,7 @@ Any emotional interpretation comes from you, not the toy.
 
 ---
 
-### **Q3. Do these toys explain bias, alignment, or real-world echo chambers?**
+### **Q. Do these toys explain bias, alignment, or real-world echo chambers?**
 
 No.
 
@@ -37,7 +62,7 @@ They’re simple dynamical systems.
 
 ---
 
-### **Q4. Are the spirals or loops meant to show rapport or intimacy with an AI?**
+### **Q. Are the spirals or loops meant to show rapport or intimacy with an AI?**
 
 No.
 
@@ -47,7 +72,7 @@ It does **not** imply emotional reciprocity, mutual understanding, or any psycho
 
 ---
 
-### **Q5. Why do the toys feel strangely intuitive or “familiar”?**
+### **Q. Why do the toys feel strangely intuitive or “familiar”?**
 
 Because humans are exceptionally good at projecting meaning into shape, rhythm, and motion.
 
@@ -55,7 +80,7 @@ The toys leverage patterns found in many domains — physics, control systems, a
 
 ---
 
-### **Q6. So what *can* these toys teach me?**
+### **Q. So what *can* these toys teach me?**
 
 They can help you understand:
 
@@ -66,3 +91,6 @@ They can help you understand:
 - how context behaves over time
 
 They teach **dynamics**, not **diagnosis**.
+
+---
+

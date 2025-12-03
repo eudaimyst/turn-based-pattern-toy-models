@@ -1,4 +1,4 @@
-[Human in the loop: This was an early concept of the intended audience. But as time went on it became clear that the potential for the toys to be misinterpreted was too great. Even with careful framing, removing the words dynamics, abstracting conversations, etc... Therefore the audience was reduced to what's present in the README. Whether this is the case or just a symptom of the ethical guardrails being established early in the project and consistently reinforced by the AI, I'm not sure. But it caused me to make this decision rather than release the toy models publicly.]
+[Human in the loop: Here is an early concept of the intended audience. But as time went on it became clear that the potential for the toys to be misinterpreted was too great. Even with careful framing, removing the words dynamics, abstracting conversations, etc. Therefore the audience was reduced to what's present in the README.]
 
 # **🎯 Who This Is For**
 

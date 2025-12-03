@@ -195,6 +195,12 @@
   </details>
 
   <details>
+    <summary>Intuitive example</summary>
+    <p>Imagine trying to adjust the level of detail in a shared task: you provide too much, then too little, then slightly too much again, with each adjustment shrinking until both sides reach a comfortable middle.</p>
+    <p>This toy shows that kind of shrinking back-and-forth motion using numbers, without implying motives or psychological states.</p>
+  </details>
+
+  <details>
     <summary>Fields this dynamic draws from</summary>
     <ul>
       <li>control theory (overshoot, settling behavior, restoring forces)</li>

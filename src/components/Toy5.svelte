@@ -173,6 +173,13 @@
   </details>
 
   <details>
+    <summary>Intuitive example</summary>
+    <p>Imagine a turn-based exchange where each turn gives the shared space a small shove in some direction — a bit more formal, a bit more playful, a bit more detailed, a bit less detailed.</p>
+    <p>At the same time, the previous joint-context does not fully disappear; a trace of where it just was still carries forward.</p>
+    <p>The line you see is the numerical version of those combined nudges, without implying motives or psychological states.</p>
+  </details>
+
+  <details>
     <summary>Fields this dynamic draws from</summary>
     <ul>
       <li>control theory (linear updates, persistence factors)</li>

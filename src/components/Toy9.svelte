@@ -195,8 +195,16 @@
   <p>
     Determines the amplitude of the spike added on the moment the impulse is
     triggered.<br />
-    The impulse affects only one update; subsequent steps follow the decay rule.
+    affects only one update; subsequent steps follow the decay rule.
   </p>
+</details>
+
+<details>
+  <summary>Intuitive example</summary>
+  <p>Imagine tapping a bell exactly once. The bell rings loudly for a moment, then softens, then fades.</p>
+  <p>The "ring" here is only the <strong>shape of the pattern</strong>—a curve rising and settling.</p>
+  <p>Nothing about this represents how a person "feels" or "recovers."</p>
+  <p>It is just a single numerical bump and the mathematical fading that follows.</p>
 </details>
 
 <details>

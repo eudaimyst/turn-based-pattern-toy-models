@@ -186,6 +186,13 @@
 </details>
 
 <details>
+  <summary>Intuitive example</summary>
+  <p>In a back-and-forth exchange, sometimes the way the last few turns were phrased gives the next turn a tiny shove in a similar direction.</p>
+  <p>Not a rule, not a preference—just a small external nudge in the pattern of the exchange.</p>
+  <p>This toy makes that visible as a field of arrows gently guiding the point.</p>
+</details>
+
+<details>
   <summary>Fields this dynamic draws from</summary>
   <ul>
     <li>vector field visualization</li>

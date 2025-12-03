@@ -260,6 +260,14 @@
 </details>
 
 <details>
+  <summary>Intuitive example</summary>
+  <p>Think of a back-and-forth where the shape of earlier turns gently nudges the next turns to fall into a familiar zone.</p>
+  <p>Over time, the pattern drifts toward that spot — not because anyone steers it there, but because the shape of the exchange itself leaves a little groove.</p>
+  <p>This toy shows that idea in a purely geometric way: a dot drifting across a surface whose 'low spot' represents the direction those earlier nudges tend to accumulate.</p>
+  <p>No feelings, no intentions — just the gentle pull of numerical history.</p>
+</details>
+
+<details>
   <summary>Fields this dynamic draws from</summary>
   <ul>
     <li>physics (potential surfaces, slope-based motion)</li>

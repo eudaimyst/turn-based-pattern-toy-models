@@ -196,6 +196,16 @@
   </details>
 
   <details>
+    <summary>Intuitive example</summary>
+    <p>Imagine two people placing "acceptable zones" on a shared map — not emotionally, just spatially:</p>
+    <p>One marks a blue rectangle: "Here is where things can take place."</p>
+    <p>The other marks a red rectangle: "Here is where things can take place."</p>
+    <p>Where the two zones overlap, something can occur.</p>
+    <p>Move either rectangle even a little, and the shared zone shifts — sometimes widening, sometimes vanishing entirely.</p>
+    <p>This toy shows that overlap as a clear geometric shape.</p>
+  </details>
+
+  <details>
     <summary>Fields this dynamic draws from</summary>
     <ul>
       <li>

@@ -158,6 +158,17 @@
   </details>
 
   <details>
+    <summary>Intuitive example</summary>
+    <p>Imagine steering a conversation gently:</p>
+    <ul>
+      <li>If you introduce a theme but don't reinforce it, the next turn barely shifts (k small).</li>
+      <li>If you introduce it firmly each time, the direction shifts noticeably (k medium).</li>
+      <li>If you emphasize it strongly, the direction snaps to it almost immediately (k big).</li>
+    </ul>
+    <p>No minds or motives — just how strongly a repeated influence appears in the next step of a turn-by-turn exchange.</p>
+  </details>
+
+  <details>
     <summary>Fields this dynamic draws from</summary>
     <ul>
       <li>linear recurrence relations</li>

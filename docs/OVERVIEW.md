@@ -8,7 +8,7 @@
 This repository presents a set of **interactive toy models** that visualize structural patterns which can appear in turn-based interactions — including stability, drift, saturation, noise sensitivity, vector influences, and nonlinear responses.
 
 Each model is a **purely mathematical construct**, implemented as a small, self-contained recurrence or geometric rule.  
-They are intended as **conceptual lenses** for exploring how simple update mechanisms shape external patterns over time.
+They are intended as **conceptual lenses** for exploring how simple update rules(algorithms) shape external patterns over time.
 
 These models:
 
@@ -48,7 +48,7 @@ Each toy is:
 - controlled by sliders so users can observe how structure changes under parametric variation  
 - strictly bounded to external, observable mathematical patterns  
 
-The models are intentionally low-dimensional and interpretable.  
+The models are intentionally low-dimensional and interpretable while remaining as abstract and free from misinterpretation as possible.  
 They function similarly to classical didactic examples in:
 
 - control theory  

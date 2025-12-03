@@ -196,6 +196,12 @@
 </details>
 
 <details>
+  <summary>Intuitive example</summary>
+  <p>Sometimes a single turn in an exchange gives the overall pattern a small temporary shove — not a psychological reaction, just a visible bump in the shape of the sequence.</p>
+  <p>This toy shows that bump as a numerical wobble or smooth return after a tap.</p>
+</details>
+
+<details>
   <summary>Fields this dynamic draws from</summary>
   <ul>
     <li>signal processing (impulse response, ringing, damping)</li>

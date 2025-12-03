@@ -107,7 +107,16 @@
   <div class="controls">
     <label>
       a (stability)
-      <input type="range" min="0.1" max="1" step="0.01" bind:value={params.a} />
+      <input
+        type="range"
+        min="0.1"
+        max="1"
+        step="0.01"
+        on:input={(e) => {
+          const val = +e.currentTarget.value;
+          params = { ...params, a: val };
+        }}
+      />
       <span class="val">{params.a.toFixed(2)}</span>
     </label>
 
@@ -118,7 +127,10 @@
         min="-0.05"
         max="0.05"
         step="0.001"
-        bind:value={params.b}
+        on:input={(e) => {
+          const val = +e.currentTarget.value;
+          params = { ...params, b: val };
+        }}
       />
       <span class="val">{params.b.toFixed(2)}</span>
     </label>
@@ -130,7 +142,10 @@
         min="0.02"
         max="0.1"
         step="0.001"
-        bind:value={params.sigma}
+        on:input={(e) => {
+          const val = +e.currentTarget.value;
+          params = { ...params, sigma: val };
+        }}
       />
       <span class="val">{params.sigma.toFixed(2)}</span>
     </label>
@@ -215,6 +230,29 @@
       This does <em>not</em> represent randomness in cognition or behavior --- it
       is included purely as a graphical aid to better see how stability and drift
       interact.
+    </p>
+  </details>
+
+  <details>
+    <summary>Intuitive example</summary>
+    <p>Imagine talking to someone (or a model) where:</p>
+    <ul>
+      <li>
+        If topics align, the conversation naturally settles back into its usual
+        tone → stability.
+      </li>
+      <li>
+        If the conversation drifts in a direction (more structured, more
+        specific), the conversation gradually shifts that way → drift.
+      </li>
+      <li>
+        Little fluctuations happen because language is messy → tiny aesthetic
+        wiggles.
+      </li>
+    </ul>
+    <p>
+      These three ingredients produce the wiggly line you see --- a simple trace
+      of how a pattern recurs across steps.
     </p>
   </details>
 

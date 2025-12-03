@@ -438,6 +438,16 @@
 </details>
 
 <details>
+  <summary>Intuitive example</summary>
+  <p>Picture a turn-by-turn exchange where the output is driven by the same update rule every time — except you can adjust one small parameter.</p>
+  <p>At one value, the pattern settles neatly.</p>
+  <p>Change the parameter slightly and the pattern starts alternating.</p>
+  <p>Change it again and the alternation splits.</p>
+  <p>Push it further and the pattern becomes beautifully complex.</p>
+  <p>The branching isn't emotional or intentional — it's simply what the sequence does when that dial moves.</p>
+</details>
+
+<details>
   <summary>Fields this dynamic draws from</summary>
   <ul>
     <li>nonlinear dynamics</li>

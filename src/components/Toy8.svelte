@@ -144,9 +144,17 @@
   <h4>noise_level — randomness amplitude</h4>
   <p>
     Controls the strength of the random perturbation applied each step.<br />
-    Higher noise_level: sharper, more chaotic movement.<br />
+    sharper, more chaotic movement.<br />
     Lower noise_level: smoother, more stable movement.
   </p>
+</details>
+
+<details>
+  <summary>Intuitive example</summary>
+  <p>Imagine issuing repeated instructions to a system, trying to keep them identical—yet small differences inevitably slip in: a slightly altered word, a minor typo, a tiny shift in phrasing.</p>
+  <p>Even though the goal is consistency, each step introduces a minute variation.</p>
+  <p>Those variations accumulate over time, producing a wiggly path without motives, emotions, or hidden forces.</p>
+  <p>Just ordinary surface-level variability.</p>
 </details>
 
 <details>

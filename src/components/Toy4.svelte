@@ -214,6 +214,14 @@
   </details>
 
   <details>
+    <summary>Intuitive example</summary>
+    <p>Imagine adjusting the tone or detail level in a conversation where nudging upward (more energy, more detail) works differently than nudging downward (less energy, less detail).</p>
+    <p>Because rising and falling have different sensitivities, the route you take matters.</p>
+    <p>Changing direction halfway yields a different path than taking the same steps in another order.</p>
+    <p>This toy shows that order sensitivity using numbers, without implying motives or psychological states.</p>
+  </details>
+
+  <details>
     <summary>Fields this dynamic draws from</summary>
     <ul>
       <li>control theory (asymmetric gains, directional weighting)</li>

@@ -159,6 +159,13 @@
 </details>
 
 <details>
+  <summary>Intuitive example</summary>
+  <p>Imagine stirring a mixture: if it's thin, each stir instantly changes it; if it's thick, each stir barely nudges it.</p>
+  <p>In a turn-based exchange, low saturation means new nudges shift the pattern quickly, while high saturation means the pattern holds onto previous influence.</p>
+  <p>This toy shows that difference as a curve drawn over time, without implying motives or mental states.</p>
+</details>
+
+<details>
   <summary>Fields this dynamic draws from</summary>
   <ul>
     <li>control theory (weighted recurrences, convergence behavior)</li>

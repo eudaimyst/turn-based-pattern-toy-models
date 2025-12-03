@@ -84,8 +84,8 @@ This does *not* represent randomness in cognition or behavior --- it is included
 # One practical raccoon-style intuition
 Imagine talking to someone (or a model) where:
 
--   If you stop pushing, the conversation naturally settles back into its usual tone → stability.
--   If you keep nudging it in a direction (more silly, more structured, more specific), the conversation gradually shifts that way → drift.
+-   if topics align, the conversation naturally settles back into its usual tone → stability.
+-   If it drifts in a direction (more structured, more specific), the conversation gradually shifts that way → drift.
 -   Little fluctuations happen because language is messy → tiny aesthetic wiggles.
 
 These three ingredients produce the wiggly line you see --- a simple trace of how a pattern recurs across steps.
