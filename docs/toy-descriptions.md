@@ -20,7 +20,7 @@ Same structure.
 ### Parameter 3 — role
 Same structure (if applicable).
 
-# One practical raccoon-style intuition
+# Intuitive Example
 A simple, friendly example mapping the toy’s behavior to an everyday pattern in
 turn-based interaction, without implying minds or intentions.
 
@@ -81,7 +81,7 @@ This corresponds to **consistent steering** in an interaction --- such as the us
 Adds small random variation so the pattern doesn't look overly straight.
 This does *not* represent randomness in cognition or behavior --- it is included purely as a graphical aid to better see how stability and drift interact.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine talking to someone (or a model) where:
 
 -   if topics align, the conversation naturally settles back into its usual tone → stability.
@@ -160,7 +160,7 @@ A constant value that is blended into each step.
 Adjusting this changes the direction the numerical state is pulled toward.
 This is not a participant or intention; it is simply a fixed numerical input.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine steering a conversation gently:
 -   If you introduce a theme but don’t reinforce it, the next turn barely shifts (k small).
 -   If you introduce it firmly each time, the direction shifts noticeably (k medium).
@@ -230,7 +230,7 @@ Determines how sharply the position is nudged toward the target. Smaller stiffne
 ### u — target value
 A fixed reference point the position is drawn toward. Adjusting this moves the goal the pattern attempts to settle near. This is purely a numerical value and not an intention or preference.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine trying to adjust the level of detail in a shared task: you provide too much, then too little, then slightly too much again, with each adjustment shrinking until both sides reach a comfortable middle.
 This toy shows that kind of shrinking back-and-forth motion using numbers, without implying motives or psychological states.
 
@@ -292,7 +292,7 @@ Controls how strongly the state moves toward the input when the input is less th
 Higher values create stronger downward adjustments, while lower values make decreases more gradual.
 This models situations where downward shifts behave differently from upward ones.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine adjusting the tone or detail level in a conversation where nudging upward (more energy, more detail) works differently than nudging downward (less energy, less detail).
 Because rising and falling have different sensitivities, the route you take matters.
 Changing direction halfway yields a different path than taking the same steps in another order.
@@ -353,7 +353,7 @@ Controls how much of the previous joint-context remains after each update.
 Higher values: smoother drift influenced by past steps.  
 Lower values: past joint-context fades quickly, producing sharper, more reactive movements.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine a turn-based exchange where each turn gives the shared space a small shove in some direction — a bit more formal, a bit more playful, a bit more detailed, a bit less detailed.
 At the same time, the previous joint-context does not fully disappear; a trace of where it just was still carries forward.
 The line you see is the numerical version of those combined nudges, without implying motives or psychological states.
@@ -412,7 +412,7 @@ Moves the second rectangle horizontally, independent of the first.
 ### m_y — vertical shift of the second region  
 Moves the second rectangle vertically, determining how its allowable zone aligns with the first.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine two people placing “acceptable zones” on a shared map — not emotionally, just spatially:
 One marks a blue rectangle: “Here is where things can take place.”
 The other marks a red rectangle: “Here is where things can take place.”
@@ -476,7 +476,7 @@ Lower S: the state responds quickly to new input and retains less of its past.
 ### u — external input
 Sets the target value applied each turn. When saturation is low, the state moves rapidly toward u; when saturation is high, the movement is gradual.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine stirring a mixture: if it’s thin, each stir instantly changes it; if it’s thick, each stir barely nudges it.
 In a turn-based exchange, low saturation means new nudges shift the pattern quickly, while high saturation means the pattern holds onto previous influence.
 This toy shows that difference as a curve drawn over time, without implying motives or mental states.
@@ -534,7 +534,7 @@ Controls the strength of the random perturbation applied each step.
 Higher noise_level: sharper, more chaotic movement.  
 Lower noise_level: smoother, more stable movement.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine issuing repeated instructions to a system,
 trying to keep them identical—yet small differences inevitably slip in: a slightly altered word, a minor typo, a tiny shift in phrasing.
 Even though the goal is consistency, each step introduces a minute variation.
@@ -607,7 +607,7 @@ The decay acts **only** on the numerical pattern displayed on the screen.
 Determines the amplitude of the spike added on the moment the impulse is triggered.  
 The impulse affects only one update; subsequent steps follow the decay rule.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Imagine tapping a bell exactly once. The bell rings loudly for a moment, then softens, then fades.  
 The “ring” here is only the **shape of the pattern**—a curve rising and settling.  
 Nothing about this represents how a person “feels” or “recovers.”  
@@ -681,7 +681,7 @@ The point drifts toward whichever coordinates are set as the lowest point.
 Adds minor fluctuations to make the trajectory easier to follow.  
 This noise is purely aesthetic and does not represent randomness in human or AI behaviour.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Think of a back-and-forth where the shape of earlier turns gently nudges the next turns to fall into a familiar zone.
 Over time, the pattern drifts toward that spot — not because anyone steers it there, but because the shape of the exchange itself leaves a little groove.
 This toy shows that idea in a purely geometric way: a dot drifting across a surface whose ‘low spot’ represents the direction those earlier nudges tend to accumulate.
@@ -779,7 +779,7 @@ Changing this angle alters the directional pattern of movement.
 Specify where the point begins its path.  
 Different starting points reveal how the flow behaves across the plane.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 In a back-and-forth exchange, sometimes the way the last few turns were phrased gives the next turn a tiny shove in a similar direction.
 Not a rule, not a preference—just a small external nudge in the pattern of the exchange.
 This toy makes that visible as a field of arrows gently guiding the point.
@@ -844,7 +844,7 @@ Determines how strongly a triggered impulse affects the next update.
 ### impulse_magnitude — size of the tap  
 Sets the amplitude of the one-step impulse applied when you press *Impulse*.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Sometimes a single turn in an exchange gives the overall pattern a small temporary shove — not a psychological reaction, just a visible bump in the shape of the sequence.
 This toy shows that bump as a numerical wobble or smooth return after a tap.
 
@@ -910,7 +910,7 @@ This allows inspection of how long-term behaviour depends on initial conditions.
 
 Press **Recompute Bifurcation** to regenerate the full diagram.
 
-# One practical raccoon-style intuition
+# Intuitive Example
 Picture a turn-by-turn exchange where the output is driven by the same update rule every time — except you can adjust one small parameter.
 
 At one value, the pattern settles neatly.
