@@ -41,9 +41,6 @@
 
     // 12. Impulse Response
     { id: "toy12", name: "Impulse Response", color: "#fffbeb" },
-
-    // 13. Bifurcation Explorer
-    { id: "toy13", name: "Bifurcation Explorer", color: "#f7fee7" },
   ];
 
   function select(id: string) {
